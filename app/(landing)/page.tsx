@@ -6,11 +6,11 @@ import { Button } from "@/app/(components)/Button";
 
 export default function page() {
   return (
-    <div className="h-screen w-screen bg-red-100/75 flex flex-col p-10">
+    <div className="h-screen w-screen bg-orange-100/75 flex flex-col p-10">
       <Navbar />
       <main className="w-[90%] max-w-[1200px] mx-auto flex items-center justify-between my-auto">
         <div className="flex flex-col gap-3">
-          <h1 className="text-red-500 font-bold text-6xl">
+          <h1 className="text-orange-500 font-bold text-6xl">
             Your favorites trucks
             <br />
             In one place

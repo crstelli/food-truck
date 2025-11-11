@@ -37,7 +37,7 @@ function CustomMarker({ marker }: Props) {
             <span className="font-bold text-lg text-green-400">$</span>
           </div>
           <div className="flex items-center mt-4 gap-2">
-            <Button className="flex items-center gap-2">
+            <Button className="flex items-center gap-2 text-nowrap">
               <Map />
               Get Directions
             </Button>

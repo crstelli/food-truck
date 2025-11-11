@@ -14,9 +14,9 @@ function Button({
   const base = "rounded-lg cursor-pointer duration-150";
   const variants = {
     primary:
-      "bg-red-500 text-red-50 border border-red-500 hover:bg-red-50 hover:text-red-500",
+      "bg-orange-500 text-orange-50 border border-orange-500 hover:bg-orange-50 hover:text-orange-500",
     secondary:
-      "bg-red-50 text-red-500 border border-red-500 hover:bg-red-500 hover:text-red-50",
+      "bg-orange-50 text-orange-500 border border-orange-500 hover:bg-orange-500 hover:text-orange-50",
   };
 
   const sizes = {
