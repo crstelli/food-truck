@@ -1,0 +1,14 @@
+import { Navbar } from "@/app/(components)/(navbar)/Navbar";
+
+interface Props {
+  readonly children: React.ReactNode;
+}
+
+export default function RootLayout({ children }: Props) {
+  return (
+    <div className="h-screen w-screen bg-orange-100/75 flex flex-col p-10">
+      <Navbar />
+      {children}
+    </div>
+  );
+}
