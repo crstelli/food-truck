@@ -1,1 +1,13 @@
 @import "tailwindcss";
+
+/* Map Popups customization */
+.place-popup .leaflet-popup-content-wrapper {
+  @apply bg-red-50 font-[Nunito] w-full;
+
+  max-width: none !important;
+  max-height: none !important;
+}
+
+.place-popup .leaflet-popup-tip {
+  @apply bg-red-50;
+}

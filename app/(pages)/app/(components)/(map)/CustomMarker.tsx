@@ -1,9 +1,12 @@
 import { Marker, Popup, useMap } from "react-leaflet";
-
 import type { LeafletMouseEvent } from "leaflet";
 import type { marker as markerType } from "@/app/(lib)/(types)/marker";
 
+import { PLACE_FOCUS_ZOOM } from "@/app/(lib)/constants";
 import { markerIcon } from "@/app/(lib)/markerIcon";
+import { Button } from "@/app/(components)/Button";
+
+import { Map, Star } from "lucide-react";
 
 interface Props {
   marker: markerType;
@@ -13,7 +16,7 @@ function CustomMarker({ marker }: Props) {
   const map = useMap();
 
   function handleClick(e: LeafletMouseEvent) {
-    map.flyTo(e.latlng);
+    map.flyTo(e.latlng, PLACE_FOCUS_ZOOM);
   }
 
   return (
@@ -23,7 +26,22 @@ function CustomMarker({ marker }: Props) {
       position={marker.position}
       icon={markerIcon}
     >
-      <Popup>{marker.label}</Popup>
+      <Popup className="place-popup">
+        <div className="w-full flex flex-col gap-1">
+          <h2 className="text-3xl font-bold text-nowrap">Antonio Truck</h2>
+          <div className="flex items-center justify-between">
+            <span className="flex items-center gap-1 text-gray-700 text-lg">
+              <Star className="text-yellow-600 fill-yellow-600" />
+              4.7
+            </span>
+            <span className="font-bold text-lg text-green-400">$</span>
+          </div>
+          <Button className="mt-4 flex items-center gap-2" variant="primary">
+            <Map />
+            Get Directions
+          </Button>
+        </div>
+      </Popup>
     </Marker>
   );
 }

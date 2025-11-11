@@ -2,6 +2,7 @@ import { MapContainer, TileLayer } from "react-leaflet";
 import { CustomMarker } from "./CustomMarker";
 
 import type { marker } from "@/app/(lib)/(types)/marker";
+import { MAP_DEFAULT_ZOOM } from "@/app/(lib)/constants";
 
 const markers: marker[] = [
   {
@@ -35,7 +36,7 @@ export default function Map() {
   return (
     <MapContainer
       center={[40.828928, 14.2311424]}
-      zoom={12}
+      zoom={MAP_DEFAULT_ZOOM}
       scrollWheelZoom={false}
       className="w-full h-full"
     >
