@@ -15,7 +15,8 @@ function Button({
   const variants = {
     primary:
       "bg-red-500 text-red-50 border border-red-500 hover:bg-red-50 hover:text-red-500",
-    secondary: "",
+    secondary:
+      "bg-red-50 text-red-500 border border-red-500 hover:bg-red-500 hover:text-red-50",
   };
 
   const sizes = {

@@ -6,7 +6,7 @@ import { PLACE_FOCUS_ZOOM } from "@/app/(lib)/constants";
 import { markerIcon } from "@/app/(lib)/markerIcon";
 import { Button } from "@/app/(components)/Button";
 
-import { Map, Star } from "lucide-react";
+import { Info, Map, Star } from "lucide-react";
 
 interface Props {
   marker: markerType;
@@ -32,14 +32,20 @@ function CustomMarker({ marker }: Props) {
           <div className="flex items-center justify-between">
             <span className="flex items-center gap-1 text-gray-700 text-lg">
               <Star className="text-yellow-600 fill-yellow-600" />
-              4.7
+              4.7 (162)
             </span>
             <span className="font-bold text-lg text-green-400">$</span>
           </div>
-          <Button className="mt-4 flex items-center gap-2" variant="primary">
-            <Map />
-            Get Directions
-          </Button>
+          <div className="flex items-center mt-4 gap-2">
+            <Button className="flex items-center gap-2">
+              <Map />
+              Get Directions
+            </Button>
+            <Button className="flex items-center gap-2" variant="secondary">
+              <Info />
+              Info
+            </Button>
+          </div>
         </div>
       </Popup>
     </Marker>
