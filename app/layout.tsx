@@ -1,4 +1,5 @@
 import "@/app/(styles)/globals.css";
+import "leaflet/dist/leaflet.css";
 
 import { Nunito } from "next/font/google";
 
