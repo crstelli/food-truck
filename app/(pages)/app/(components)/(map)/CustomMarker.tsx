@@ -1,18 +1,19 @@
 import { Marker, Popup, useMap } from "react-leaflet";
 import type { LeafletMouseEvent } from "leaflet";
-import type { marker as markerType } from "@/app/(lib)/(types)/marker";
+import type { Place as placeType } from "@/app/(lib)/(types)/Place";
 
 import { PLACE_FOCUS_ZOOM } from "@/app/(lib)/constants";
 import { markerIcon } from "@/app/(lib)/markerIcon";
 import { Button } from "@/app/(components)/Button";
 
 import { Info, Map, Star } from "lucide-react";
+import { getAffordabilityColor } from "@/app/(lib)/getAffordabilityColor";
 
 interface Props {
-  marker: markerType;
+  place: placeType;
 }
 
-function CustomMarker({ marker }: Props) {
+function CustomMarker({ place }: Props) {
   const map = useMap();
 
   function handleClick(e: LeafletMouseEvent) {
@@ -22,19 +23,25 @@ function CustomMarker({ marker }: Props) {
   return (
     <Marker
       eventHandlers={{ click: handleClick }}
-      key={marker.id}
-      position={marker.position}
+      key={place.id}
+      position={place.position}
       icon={markerIcon}
     >
       <Popup className="place-popup">
         <div className="w-full flex flex-col gap-1">
-          <h2 className="text-3xl font-bold text-nowrap">Antonio Truck</h2>
+          <h2 className="text-3xl font-bold text-nowrap">{place.name}</h2>
           <div className="flex items-center justify-between">
             <span className="flex items-center gap-1 text-gray-700 text-lg">
               <Star className="text-yellow-500 fill-yellow-500" />
-              4.7 (162)
+              {place.ratingValue} ({place.ratingCount})
             </span>
-            <span className="font-bold text-xl text-green-400">$</span>
+            <span
+              className={`font-bold text-xl ${getAffordabilityColor(
+                place.affordability
+              )}`}
+            >
+              {place.affordability}
+            </span>
           </div>
           <div className="flex items-center mt-4 gap-2">
             <Button className="flex items-center gap-2 text-nowrap">
