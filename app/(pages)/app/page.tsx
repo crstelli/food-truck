@@ -11,7 +11,7 @@ export default function page() {
   return (
     <div className="max-w-screen h-screen grid grid-cols-[auto_1fr]">
       <Navbar />
-      <main className="w-full h-full">
+      <main className="w-full h-full flex items-center justify-center">
         <Map />
       </main>
     </div>
