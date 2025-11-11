@@ -31,10 +31,10 @@ function CustomMarker({ marker }: Props) {
           <h2 className="text-3xl font-bold text-nowrap">Antonio Truck</h2>
           <div className="flex items-center justify-between">
             <span className="flex items-center gap-1 text-gray-700 text-lg">
-              <Star className="text-yellow-600 fill-yellow-600" />
+              <Star className="text-yellow-500 fill-yellow-500" />
               4.7 (162)
             </span>
-            <span className="font-bold text-lg text-green-400">$</span>
+            <span className="font-bold text-xl text-green-400">$</span>
           </div>
           <div className="flex items-center mt-4 gap-2">
             <Button className="flex items-center gap-2 text-nowrap">

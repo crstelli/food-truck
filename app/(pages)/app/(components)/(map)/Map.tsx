@@ -25,14 +25,6 @@ const markers: marker[] = [
 ];
 
 export default function Map() {
-  // const map = useMap();
-
-  // function handleMarkerClick(e) {
-  //   // console.log(e.lat);
-  //   // Fly to map
-  //   // Open form
-  // }
-
   return (
     <MapContainer
       center={[40.828928, 14.2311424]}
