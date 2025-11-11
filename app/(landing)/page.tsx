@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 
 import { Navbar } from "@/app/(components)/(navbar)/Navbar";
@@ -17,7 +18,9 @@ export default function page() {
           <h2 className="text-2xl font-light text-gray-500">
             Over 100.000 food trucks around the world.
           </h2>
-          <Button className="self-start mt-8">Check the App &rarr;</Button>
+          <Link href="/app">
+            <Button className="self-start mt-8">Check the App &rarr;</Button>
+          </Link>
         </div>
         <div className="w-[400px] aspect-video relative">
           <div className="absolute top-0 left-0 w-full h-full z-2"></div>
