@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { Map } from "./(components)/index";
+import { Map } from "./(components)/(map)/index";
 
 export default function page() {
   return (

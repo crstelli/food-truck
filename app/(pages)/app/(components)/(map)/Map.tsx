@@ -1,7 +1,8 @@
-import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
-import { markerIcon } from "@/app/(lib)/markerIcon";
+import { MapContainer, Popup, TileLayer } from "react-leaflet";
+import { CustomMarker } from "./CustomMarker";
 
 import type { marker } from "@/app/(lib)/(types)/marker";
+import { markerIcon } from "@/app/(lib)/markerIcon";
 
 const markers: marker[] = [
   {
@@ -24,6 +25,14 @@ const markers: marker[] = [
 ];
 
 export default function Map() {
+  // const map = useMap();
+
+  // function handleMarkerClick(e) {
+  //   // console.log(e.lat);
+  //   // Fly to map
+  //   // Open form
+  // }
+
   return (
     <MapContainer
       center={[40.828928, 14.2311424]}
@@ -33,15 +42,8 @@ export default function Map() {
     >
       {/* <TileLayer url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png" /> */}
       <TileLayer url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png" />
-      {/* <Marker position={[40.828928, 14.2311424]} icon={markerIcon}>
-        <Popup>
-          A pretty CSS3 popup. <br /> Easily customizable.
-        </Popup>
-      </Marker> */}
       {markers.map((marker) => (
-        <Marker key={marker.id} position={marker.position} icon={markerIcon}>
-          <Popup>{marker.label}</Popup>
-        </Marker>
+        <CustomMarker key={marker.id} marker={marker} />
       ))}
     </MapContainer>
   );
