@@ -1,8 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
 
 import { Navbar } from "@/app/(components)/(navbar)/Navbar";
 import { Button } from "@/app/(components)/Button";
+
+export const metadata: Metadata = {
+  title: "Home",
+};
 
 export default function page() {
   return (
@@ -18,8 +23,8 @@ export default function page() {
           <h2 className="text-2xl font-light text-gray-500">
             Over 100.000 food trucks around the world.
           </h2>
-          <Link href="/app">
-            <Button className="self-start mt-8">Check the App &rarr;</Button>
+          <Link href="/app" className="self-start mt-8">
+            <Button>Check the App &rarr;</Button>
           </Link>
         </div>
         <div className="w-[400px] aspect-video relative">

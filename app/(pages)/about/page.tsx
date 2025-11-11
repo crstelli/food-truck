@@ -1,4 +1,9 @@
+import type { Metadata } from "next";
 import { Navbar } from "@/app/(components)/(navbar)/Navbar";
+
+export const metadata: Metadata = {
+  title: "About",
+};
 
 export default function page() {
   return (

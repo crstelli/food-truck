@@ -1,13 +1,21 @@
 import "@/app/(styles)/globals.css";
 import "leaflet/dist/leaflet.css";
 
-import { Nunito } from "next/font/google";
+import type { Metadata } from "next";
 
+import { Nunito } from "next/font/google";
 const nunito = Nunito({ subsets: ["latin"] });
 
 interface Props {
   readonly children: React.ReactNode;
 }
+
+export const metadata: Metadata = {
+  title: {
+    template: "%s - FoodTruck",
+    default: "FoodTruck",
+  },
+};
 
 export default function RootLayout({ children }: Props) {
   return (

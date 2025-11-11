@@ -1,5 +1,11 @@
+import type { Metadata } from "next";
+
 import { Map } from "./(components)/(map)/index";
 import { Navbar } from "./(components)/(navbar)/Navbar";
+
+export const metadata: Metadata = {
+  title: "Map",
+};
 
 export default function page() {
   return (
