@@ -1,8 +1,7 @@
-import { MapContainer, Popup, TileLayer } from "react-leaflet";
+import { MapContainer, TileLayer } from "react-leaflet";
 import { CustomMarker } from "./CustomMarker";
 
 import type { marker } from "@/app/(lib)/(types)/marker";
-import { markerIcon } from "@/app/(lib)/markerIcon";
 
 const markers: marker[] = [
   {

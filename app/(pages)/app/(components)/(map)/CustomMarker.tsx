@@ -1,23 +1,24 @@
-import { Marker, Popup, useMap, type MarkerProps } from "react-leaflet";
+import { Marker, Popup, useMap } from "react-leaflet";
 
+import type { LeafletMouseEvent } from "leaflet";
 import type { marker as markerType } from "@/app/(lib)/(types)/marker";
+
 import { markerIcon } from "@/app/(lib)/markerIcon";
 
-interface Props extends MarkerProps {
+interface Props {
   marker: markerType;
 }
 
 function CustomMarker({ marker }: Props) {
-  // const map = useMap();
+  const map = useMap();
 
-  function handleMarkerClick(e) {
-    const { lat, lng } = e.latlng;
-    console.log(lat, lng);
+  function handleClick(e: LeafletMouseEvent) {
+    map.flyTo(e.latlng);
   }
 
   return (
     <Marker
-      eventHandlers={{ click: handleMarkerClick }}
+      eventHandlers={{ click: handleClick }}
       key={marker.id}
       position={marker.position}
       icon={markerIcon}
