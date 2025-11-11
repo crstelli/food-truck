@@ -1,10 +1,10 @@
 import { MapContainer, TileLayer } from "react-leaflet";
 import { CustomMarker } from "./CustomMarker";
 
-import type { place } from "@/app/(lib)/(types)/Place";
+import type { Place } from "@/app/(lib)/(types)/Place";
 import { MAP_DEFAULT_ZOOM } from "@/app/(lib)/constants";
 
-const places: place[] = [
+const places: Place[] = [
   {
     id: 1,
     position: [40.828928, 14.2311424],
