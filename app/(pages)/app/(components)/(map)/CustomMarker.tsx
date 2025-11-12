@@ -40,11 +40,12 @@ function CustomMarker({ place }: Props) {
     replace(`${pathname}`);
   }
 
+  console.log(place);
+
   return (
     <Marker
-      key={place.id}
       eventHandlers={{ click: handleOpen }}
-      position={place.position}
+      position={place.location}
       icon={markerIcon}
     >
       <Popup
@@ -57,7 +58,7 @@ function CustomMarker({ place }: Props) {
           <div className="flex items-center justify-between">
             <span className="flex items-center gap-1 text-gray-700 text-lg">
               <Star className="text-yellow-500 fill-yellow-500" />
-              {place.ratingValue} ({place.ratingCount})
+              {place.rating_value} (EDIT ME)
             </span>
             <span
               className={`font-bold text-xl ${getAffordabilityColor(

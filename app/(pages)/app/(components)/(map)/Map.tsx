@@ -4,36 +4,40 @@ import { CustomMarker } from "./CustomMarker";
 import type { Place } from "@/app/(lib)/(types)/Place";
 import { MAP_DEFAULT_ZOOM } from "@/app/(lib)/constants";
 
-const places: Place[] = [
-  {
-    id: 1,
-    position: [40.828928, 14.2311424],
-    name: "Angels Burger",
-    ratingCount: 99,
-    ratingValue: 4.2,
-    affordability: "$$$",
-  },
+// const places: Place[] = [
+//   {
+//     id: 1,
+//     position: [40.828928, 14.2311424],
+//     name: "Angels Burger",
+//     ratingCount: 99,
+//     ratingValue: 4.2,
+//     affordability: "$$$",
+//   },
 
-  {
-    id: 2,
-    position: [40.728928, 14.1311424],
-    name: "Robero Villa",
-    ratingCount: 320,
-    ratingValue: 4.4,
-    affordability: "$$",
-  },
+//   {
+//     id: 2,
+//     position: [40.728928, 14.1311424],
+//     name: "Robero Villa",
+//     ratingCount: 320,
+//     ratingValue: 4.4,
+//     affordability: "$$",
+//   },
 
-  {
-    id: 3,
-    position: [40.628928, 14.5311424],
-    name: "El Pablo",
-    ratingCount: 52,
-    ratingValue: 4.1,
-    affordability: "$",
-  },
-];
+//   {
+//     id: 3,
+//     position: [40.628928, 14.5311424],
+//     name: "El Pablo",
+//     ratingCount: 52,
+//     ratingValue: 4.1,
+//     affordability: "$",
+//   },
+// ];
 
-export default function Map() {
+interface Props {
+  places: Place[];
+}
+
+export default function Map({ places = [] }: Props) {
   return (
     <MapContainer
       center={[40.828928, 14.2311424]}

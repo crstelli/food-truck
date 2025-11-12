@@ -3,10 +3,11 @@ import type { Affordability } from "./Affordability";
 
 export interface Place {
   id: number;
-  position: LatLngTuple;
+  created_at: string;
 
   name: string;
-  ratingValue: number;
-  ratingCount: number;
+  location: LatLngTuple;
   affordability: Affordability;
+
+  rating_value: number;
 }

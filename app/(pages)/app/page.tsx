@@ -1,4 +1,5 @@
 import type { SearchParams } from "@/app/(lib)/(types)/SearchParams";
+import fetchPlaces from "@/app/(services)/apiPlaces";
 
 import { Map } from "./(components)/(map)/index";
 import { Navbar } from "./(components)/(navbar)/Navbar";
@@ -16,11 +17,13 @@ export async function generateMetadata({ searchParams }: MetadataProps) {
 }
 
 export default async function page() {
+  const places = await fetchPlaces();
+
   return (
     <div className="max-w-screen h-screen grid grid-cols-[auto_1fr]">
       <Navbar />
       <main className="w-full h-full flex items-center justify-center">
-        <Map />
+        <Map places={places} />
       </main>
     </div>
   );
