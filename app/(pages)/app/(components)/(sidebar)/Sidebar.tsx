@@ -8,6 +8,7 @@ import Image from "next/image";
 
 import { Search } from "./(menus)/Search";
 import { Bookmarks } from "./(menus)/Bookmarks";
+import { Add } from "./(menus)/Add";
 import { Settings } from "./(menus)/Settings";
 import { Info } from "./(menus)/Info";
 
@@ -17,6 +18,7 @@ import type { SidebarMenu } from "@/app/(lib)/(types)/SidebarMenu";
 import { Item } from "./Item";
 import {
   Bookmark,
+  CirclePlus,
   ChevronLeft,
   ChevronRight,
   Info as InfoIcon,
@@ -64,6 +66,9 @@ function Sidebar() {
             <Item icon={Bookmark} opens="bookmarks">
               Bookmarks
             </Item>
+            <Item icon={CirclePlus} opens="add">
+              Add a place
+            </Item>
             <Item icon={SettingsIcon} opens="settings">
               Settings
             </Item>
@@ -76,6 +81,7 @@ function Sidebar() {
           <div className="px-4 py-15">
             {menu === "search" && <Search />}
             {menu === "bookmarks" && <Bookmarks />}
+            {menu === "add" && <Add />}
             {menu === "settings" && <Settings />}
             {menu === "info" && <Info />}
           </div>
