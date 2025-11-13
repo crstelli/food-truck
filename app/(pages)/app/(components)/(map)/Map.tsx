@@ -2,7 +2,7 @@ import { MapContainer, TileLayer } from "react-leaflet";
 import { CustomMarker } from "./CustomMarker";
 
 import type { Place } from "@/app/(lib)/(types)/Place";
-import { MAP_DEFAULT_ZOOM } from "@/app/(lib)/constants";
+import { MAP_DEFAULT_ZOOM, MAP_DEFAULT_POSITION } from "@/app/(lib)/constants";
 
 // const places: Place[] = [
 //   {
@@ -40,7 +40,7 @@ interface Props {
 export default function Map({ places = [] }: Props) {
   return (
     <MapContainer
-      center={[40.828928, 14.2311424]}
+      center={MAP_DEFAULT_POSITION}
       zoom={MAP_DEFAULT_ZOOM}
       scrollWheelZoom={false}
       className="w-full h-full"
