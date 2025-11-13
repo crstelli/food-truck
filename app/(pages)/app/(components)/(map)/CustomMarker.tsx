@@ -40,8 +40,6 @@ function CustomMarker({ place }: Props) {
     replace(`${pathname}`);
   }
 
-  console.log(place);
-
   return (
     <Marker
       eventHandlers={{ click: handleOpen }}

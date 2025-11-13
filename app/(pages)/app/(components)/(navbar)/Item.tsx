@@ -1,16 +1,27 @@
+"use client";
+
+import { useContext } from "react";
+import { NavbarContext } from "./Navbar";
+
+import { SidebarMenu } from "@/app/(lib)/(types)/SidebarMenu";
 import type { LucideIcon } from "lucide-react";
 
 interface Props {
   icon: LucideIcon;
-  collapse: boolean;
+  opens: SidebarMenu;
+
   children: string;
 }
+function Item({ icon: Icon, children, opens }: Props) {
+  const { menu, setMenu } = useContext(NavbarContext);
 
-function Item({ icon: Icon, collapse, children }: Props) {
   return (
-    <li className="flex items-center text-gray-800 gap-2 font-bold">
+    <li
+      onClick={() => setMenu(opens)}
+      className="flex items-center text-gray-800 gap-2 font-bold"
+    >
       <Icon className="size-8 stroke-2" />
-      {!collapse && <span className="text-lg">{children}</span>}
+      {menu && <span className="text-lg">{children}</span>}
     </li>
   );
 }
