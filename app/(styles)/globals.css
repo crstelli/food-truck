@@ -11,3 +11,7 @@
 .place-popup .leaflet-popup-tip {
   @apply bg-orange-50;
 }
+
+.leaflet-control-container {
+  @apply absolute right-17;
+}
