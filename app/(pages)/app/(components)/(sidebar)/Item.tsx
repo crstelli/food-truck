@@ -1,9 +1,8 @@
 "use client";
 
-import { useContext } from "react";
-import { NavbarContext } from "./Navbar";
-
+import { useSidebarContext } from "./useSidebarContext";
 import { SidebarMenu } from "@/app/(lib)/(types)/SidebarMenu";
+
 import type { LucideIcon } from "lucide-react";
 
 interface Props {
@@ -13,7 +12,7 @@ interface Props {
   children: string;
 }
 function Item({ icon: Icon, children, opens }: Props) {
-  const { menu, setMenu } = useContext(NavbarContext);
+  const { menu, setMenu } = useSidebarContext();
 
   return (
     <li

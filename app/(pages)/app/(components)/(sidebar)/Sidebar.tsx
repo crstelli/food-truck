@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, createContext } from "react";
+import { useState } from "react";
 import { useSearchParams } from "next/navigation";
 
 import Link from "next/link";
@@ -10,6 +10,8 @@ import { Search } from "./(menus)/Search";
 import { Bookmarks } from "./(menus)/Bookmarks";
 import { Settings } from "./(menus)/Settings";
 import { Info } from "./(menus)/Info";
+
+import { SidebarContext } from "./useSidebarContext";
 
 import type { SidebarMenu } from "@/app/(lib)/(types)/SidebarMenu";
 import { Item } from "./Item";
@@ -22,9 +24,7 @@ import {
   Settings as SettingsIcon,
 } from "lucide-react";
 
-const NavbarContext = createContext();
-
-function Navbar() {
+function Sidebar() {
   const [menu, setMenu] = useState<SidebarMenu>("");
   const params = useSearchParams();
 
@@ -34,7 +34,7 @@ function Navbar() {
   const selectedPlace = params.get("place") || "";
 
   return (
-    <NavbarContext.Provider value={{ menu, setMenu }}>
+    <SidebarContext.Provider value={{ menu, setMenu }}>
       <aside className="grid grid-cols-[auto_auto] relative">
         {menu ? (
           <button
@@ -81,8 +81,8 @@ function Navbar() {
           </div>
         )}
       </aside>
-    </NavbarContext.Provider>
+    </SidebarContext.Provider>
   );
 }
 
-export { Navbar, NavbarContext };
+export { Sidebar, SidebarContext };
