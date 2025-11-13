@@ -6,34 +6,76 @@ import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 
+import { Search } from "./(menus)/Search";
+import { Bookmarks } from "./(menus)/Bookmarks";
+
+import type { SidebarMenu } from "@/app/(lib)/(types)/SidebarMenu";
 import { Item } from "./Item";
-import { Bookmark, Info, Search, Settings } from "lucide-react";
+import {
+  Bookmark,
+  ChevronLeft,
+  ChevronRight,
+  Info,
+  Search as SearchIcon,
+  Settings,
+} from "lucide-react";
 
 function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [menu, setMenu] = useState<SidebarMenu>("");
   const params = useSearchParams();
+
+  const openSidebar = (menu: SidebarMenu) => setMenu(menu);
+  const closeSidebar = () => setMenu("");
 
   const selectedPlace = params.get("place") || "";
 
   return (
-    <div className="grid grid-cols-[auto_auto]">
-      <nav className="bg-linear-to-b from-orange-500 to-orange-400 px-4 py-15 flex flex-col items-center">
+    <aside className="grid grid-cols-[auto_auto] relative">
+      {menu ? (
+        <button
+          onClick={closeSidebar}
+          className="aspect-1/2 w-7 bg-orange-400 absolute text-orange-50 flex rounded-r-xl cursor-pointer items-center justify-center top-25 right-0 translate-x-full z-1001"
+        >
+          <ChevronLeft />
+        </button>
+      ) : (
+        <button
+          onClick={() => openSidebar("search")}
+          className="aspect-1/2 w-7 bg-orange-400 absolute text-orange-50 flex rounded-r-xl cursor-pointer items-center justify-center top-25 right-0 translate-x-full z-1001"
+        >
+          <ChevronRight />
+        </button>
+      )}
+      <nav className="bg-linear-to-b bg-gray-50 px-4 py-15 flex flex-col items-center">
         <Link href="/">
           <div className="size-13 relative">
-            <Image src={"/logo-white.svg"} alt="Logo of the App" fill />
+            <Image src={"/logo.svg"} alt="Logo of the App" fill />
           </div>
         </Link>
         <ul className="flex flex-col mt-27 gap-6">
-          <Item icon={Search} />
-          <Item icon={Bookmark} />
-          <Item icon={Settings} />
-          <Item icon={Info} />
+          <Item icon={SearchIcon} collapse={!menu}>
+            Search
+          </Item>
+          <Item icon={Bookmark} collapse={!menu}>
+            Bookmarks
+          </Item>
+          <Item icon={Settings} collapse={!menu}>
+            Settings
+          </Item>
+          <Item icon={Info} collapse={!menu}>
+            Info
+          </Item>
         </ul>
       </nav>
-      <div className={`px-4 bg-orange-50 py-15 ${!selectedPlace && "hidden"}`}>
-        <h2 className="text-gray-800 font-bold text-3xl">{selectedPlace}</h2>
-      </div>
-    </div>
+      {menu && (
+        <div className="px-4 py-15">
+          {menu === "search" && <Search />}
+          {menu === "bookmarks" && <Bookmarks />}
+          {menu === "settings" && <Settings />}
+          {menu === "info" && <Info />}
+        </div>
+      )}
+    </aside>
   );
 }
 
