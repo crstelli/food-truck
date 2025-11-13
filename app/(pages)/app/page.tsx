@@ -1,8 +1,9 @@
 import type { SearchParams } from "@/app/(lib)/(types)/SearchParams";
 import fetchPlaces from "@/app/(services)/apiPlaces";
 
-import { Map } from "./(components)/(map)/index";
 import { Sidebar } from "./(components)/(sidebar)/Sidebar";
+import { Map } from "./(components)/(map)/index";
+import { ContextProvider } from "./(components)/ContextProvider";
 
 interface MetadataProps {
   searchParams: SearchParams;
@@ -21,10 +22,12 @@ export default async function page() {
 
   return (
     <div className="max-w-screen h-screen grid grid-cols-[auto_1fr]">
-      <Sidebar />
-      <main className="w-full h-full flex items-center justify-center">
-        <Map places={places} />
-      </main>
+      <ContextProvider>
+        <Sidebar />
+        <main className="w-full h-full flex items-center justify-center">
+          <Map places={places} />
+        </main>
+      </ContextProvider>
     </div>
   );
 }

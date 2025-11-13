@@ -17,7 +17,7 @@ function Item({ icon: Icon, children, opens }: Props) {
   return (
     <li
       onClick={() => setMenu(opens)}
-      className="flex items-center text-gray-800 gap-2 font-bold"
+      className="flex items-center text-gray-800 cursor-pointer gap-2 font-bold"
     >
       <Icon className="size-8 stroke-2" />
       {menu && <span className="text-lg">{children}</span>}
