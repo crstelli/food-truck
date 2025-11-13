@@ -9,8 +9,9 @@ import { PLACE_FOCUS_ZOOM } from "@/app/(lib)/constants";
 import { markerIcon } from "@/app/(lib)/markerIcon";
 import { Button } from "@/app/(components)/Button";
 
-import { Info, Map, Star } from "lucide-react";
 import { getAffordabilityColor } from "@/app/(lib)/getAffordabilityColor";
+import { useSidebarContext } from "../(sidebar)/useSidebarContext";
+import { Info, Map, Star } from "lucide-react";
 
 interface Props {
   place: placeType;
@@ -21,16 +22,17 @@ function CustomMarker({ place }: Props) {
   const searchParams = useSearchParams();
 
   const pathname = usePathname();
+  const { setMenu } = useSidebarContext();
   const { replace } = useRouter();
 
   function handleOpen(e: LeafletMouseEvent) {
     const params = new URLSearchParams(searchParams);
 
-    params.set("place", String(place.name));
-    params.set("id", String(place.id));
+    params.set("place_id", String(place.id));
     replace(`${pathname}?${params.toString()}`);
 
     map.flyTo(e.latlng, PLACE_FOCUS_ZOOM);
+    setMenu("info");
   }
 
   function handleClose() {
