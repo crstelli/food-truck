@@ -1,5 +1,8 @@
 import type { SearchParams } from "@/app/(lib)/(types)/SearchParams";
-import fetchPlaces from "@/app/(services)/apiPlaces";
+import type { Place } from "@/app/(lib)/(types)/Place";
+import type { Review } from "@/app/(lib)/(types)/Review";
+
+import { fetchPlaces, fetchReviews } from "@/app/(services)/apiPlaces";
 
 import { Sidebar } from "./(components)/(sidebar)/Sidebar";
 import { Map } from "./(components)/(map)/index";
@@ -18,7 +21,15 @@ export async function generateMetadata({ searchParams }: MetadataProps) {
 }
 
 export default async function page() {
-  const places = await fetchPlaces();
+  const fetchedPlaces = await fetchPlaces();
+  const reviews: Review[] = await fetchReviews();
+
+  const places: Place[] = fetchedPlaces.map((place) => {
+    return {
+      ...place,
+      reviews: reviews.filter((review) => review.place_id === place.id),
+    };
+  });
 
   return (
     <div className="max-w-screen h-screen grid grid-cols-[auto_1fr]">

@@ -18,6 +18,8 @@ function Info() {
       <span>Added: {new Date(place.created_at).toLocaleString()}</span>
       <h3>Raings: {place.rating_value}</h3>
       <Button>Get Direction</Button>
+
+      <h2 className="mt-10">Reviews</h2>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import type { LatLngTuple } from "leaflet";
 import type { Affordability } from "./Affordability";
+import type { Review } from "./Review";
 
 export interface Place {
   id: number;
@@ -10,4 +11,5 @@ export interface Place {
   affordability: Affordability;
 
   rating_value: number;
+  reviews: Review[];
 }
