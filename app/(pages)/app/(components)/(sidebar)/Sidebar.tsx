@@ -1,7 +1,5 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
-
 import Link from "next/link";
 import Image from "next/image";
 
@@ -27,11 +25,8 @@ import {
 function Sidebar() {
   const { menu, setMenu, closeMenu } = useSidebarContext();
 
-  const params = useSearchParams();
-  const selectedPlace = params.get("place") || "";
-
   return (
-    <aside className="grid grid-cols-[auto_auto] relative">
+    <aside className="grid grid-cols-[auto_auto] relative h-screen ">
       {menu ? (
         <button
           onClick={closeMenu}
@@ -72,7 +67,7 @@ function Sidebar() {
         </ul>
       </nav>
       {menu && (
-        <div className="px-4 py-15">
+        <div className="px-4 py-15 overflow-auto">
           {menu === "search" && <Search />}
           {menu === "bookmarks" && <Bookmarks />}
           {menu === "add" && <Add />}

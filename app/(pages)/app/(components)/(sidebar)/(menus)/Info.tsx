@@ -20,6 +20,15 @@ function Info() {
       <Button>Get Direction</Button>
 
       <h2 className="mt-10">Reviews</h2>
+      <div className="flex flex-col gap-2 overflow-auto">
+        {place.reviews.map((rev) => (
+          <div key={rev.id} className="grid bg-orange-200 p-2">
+            <h3>{rev.user}</h3>
+            <span>Rating: {rev.rating}</span>
+            <span>{rev.content}</span>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
