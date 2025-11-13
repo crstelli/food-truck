@@ -1,7 +1,8 @@
 import { Dispatch, SetStateAction } from "react";
 
-import { LatLngTuple } from "leaflet";
-import { SidebarMenu } from "./SidebarMenu";
+import type { LatLngTuple } from "leaflet";
+import type { SidebarMenu } from "./SidebarMenu";
+import type { Place } from "./Place";
 
 export interface SidebarContext {
   menu: SidebarMenu;
@@ -10,4 +11,6 @@ export interface SidebarContext {
 
   position: LatLngTuple | [];
   setPosition: Dispatch<SetStateAction<LatLngTuple | []>>;
+
+  places: Place[];
 }

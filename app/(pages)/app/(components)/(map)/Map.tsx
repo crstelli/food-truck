@@ -1,15 +1,14 @@
 import { MapContainer, TileLayer } from "react-leaflet";
+import { useSidebarContext } from "../(sidebar)/useSidebarContext";
+
 import { CustomMarker } from "./CustomMarker";
 import { ClickHandler } from "./ClickHandler";
 
-import type { Place } from "@/app/(lib)/(types)/Place";
 import { MAP_DEFAULT_ZOOM, MAP_DEFAULT_POSITION } from "@/app/(lib)/constants";
 
-interface Props {
-  places: Place[];
-}
+export default function Map() {
+  const { places } = useSidebarContext();
 
-export default function Map({ places = [] }: Props) {
   return (
     <MapContainer
       center={MAP_DEFAULT_POSITION}

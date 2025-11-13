@@ -22,10 +22,10 @@ export default async function page() {
 
   return (
     <div className="max-w-screen h-screen grid grid-cols-[auto_1fr]">
-      <ContextProvider>
+      <ContextProvider places={places}>
         <Sidebar />
         <main className="w-full h-full flex items-center justify-center">
-          <Map places={places} />
+          <Map />
         </main>
       </ContextProvider>
     </div>
