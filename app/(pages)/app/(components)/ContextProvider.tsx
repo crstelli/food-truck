@@ -3,9 +3,10 @@
 import { useState } from "react";
 import { SidebarContext } from "./(sidebar)/useSidebarContext";
 
-import type { SidebarMenu } from "@/app/(lib)/(types)/SidebarMenu";
 import type { LatLngTuple } from "leaflet";
+import type { SidebarMenu } from "@/app/(lib)/(types)/SidebarMenu";
 import type { Place } from "@/app/(lib)/(types)/Place";
+import type { Bookmark } from "@/app/(lib)/(types)/Bookmark";
 
 interface Props {
   children: React.ReactNode;
@@ -15,12 +16,36 @@ interface Props {
 function ContextProvider({ children, places }: Props) {
   const [menu, setMenu] = useState<SidebarMenu>("");
   const [position, setPosition] = useState<LatLngTuple | []>([]);
+  const [bookmarks, setBookmarks] = useState<Bookmark[] | []>([]);
 
   const closeMenu = () => setMenu("");
 
+  function addBookmark(bm: Bookmark) {
+    setBookmarks((bookmarks) => [...bookmarks, bm]);
+  }
+
+  function removeBookmark(id: number) {
+    setBookmarks((bookmarks) => bookmarks.filter((book) => book.id !== id));
+  }
+
+  function isBookmarked(id: number) {
+    return bookmarks.some((bookmark) => bookmark.id === id);
+  }
+
   return (
     <SidebarContext.Provider
-      value={{ menu, setMenu, closeMenu, position, setPosition, places }}
+      value={{
+        menu,
+        setMenu,
+        closeMenu,
+        position,
+        setPosition,
+        bookmarks,
+        addBookmark,
+        removeBookmark,
+        isBookmarked,
+        places,
+      }}
     >
       {children}
     </SidebarContext.Provider>

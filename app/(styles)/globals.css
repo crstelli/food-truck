@@ -8,6 +8,10 @@
   max-height: none !important;
 }
 
+.place-popup .leaflet-popup-content {
+  width: auto !important;
+}
+
 .place-popup .leaflet-popup-tip {
   @apply bg-orange-50;
 }
