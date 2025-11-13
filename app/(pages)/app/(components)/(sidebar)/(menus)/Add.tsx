@@ -1,6 +1,9 @@
+import { useSidebarContext } from "../useSidebarContext";
 import { Button } from "@/app/(components)/Button";
 
 function Add() {
+  const { position } = useSidebarContext();
+
   return (
     <section>
       <form className="flex flex-col">
@@ -10,10 +13,20 @@ function Add() {
         <input className="border border-orange-500" type="text" />
 
         <label>Position: Lat</label>
-        <input className="border border-orange-500" type="number" />
+        <input
+          value={position[0]}
+          className="border border-orange-500"
+          type="number"
+          disabled
+        />
 
         <label>Position: Lon</label>
-        <input className="border border-orange-500" type="number" />
+        <input
+          value={position[1]}
+          className="border border-orange-500"
+          type="number"
+          disabled
+        />
 
         <label>Affordability</label>
         <input className="border border-orange-500" type="text" />

@@ -3,11 +3,16 @@
 import { useMapEvents } from "react-leaflet";
 import { useSidebarContext } from "../(sidebar)/useSidebarContext";
 
-function ClickHandler() {
-  const { setMenu } = useSidebarContext();
+import type { LatLngTuple, LeafletMouseEvent } from "leaflet";
 
-  function handleClick(e) {
+function ClickHandler() {
+  const { setMenu, setPosition } = useSidebarContext();
+
+  function handleClick(e: LeafletMouseEvent) {
+    const position: LatLngTuple = [e.latlng.lat, e.latlng.lng];
+
     setMenu("add");
+    setPosition(position);
   }
 
   useMapEvents({ click: handleClick });
