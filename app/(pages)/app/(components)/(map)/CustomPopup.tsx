@@ -2,18 +2,22 @@ import { Popup } from "react-leaflet";
 
 import type { Place } from "@/app/(lib)/(types)/Place";
 import type { Bookmark } from "@/app/(lib)/(types)/Bookmark";
+import { Star } from "@/app/(components)/Star";
 
 import { Button } from "@/components/ui/button";
 import { getAffordabilityColor } from "@/app/(lib)/getAffordabilityColor";
 import { useSidebarContext } from "../(sidebar)/useSidebarContext";
 
+import { Bookmark as BookmarkIcon, BookmarkX, Info, Map } from "lucide-react";
 import {
-  Bookmark as BookmarkIcon,
-  BookmarkX,
-  Info,
-  Map,
-  Star,
-} from "lucide-react";
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+} from "@/components/ui/card";
+import { ButtonGroup } from "@/components/ui/button-group";
+import { Separator } from "@/components/ui/separator";
 
 interface Props {
   onClose: () => void;
@@ -43,7 +47,45 @@ function CustomPopup({ onClose, place }: Props) {
       interactive
       className="place-popup"
     >
-      <div className="flex flex-col gap-1">
+      <Card className="gap-2">
+        <CardHeader className="text-nowrap flex justify-between">
+          <h2 className="font-bold text-xl">{place.name}</h2>
+        </CardHeader>
+
+        <CardContent className="flex justify-between">
+          <span className="flex items-center gap-1 text-lg">
+            <Star />
+            <span className="font-bold">{place.rating_value}</span> (
+            {place.reviews.length})
+          </span>
+          <h3
+            className={`text-lg font-bold ${getAffordabilityColor(
+              place.affordability
+            )}`}
+          >
+            {place.affordability}
+          </h3>
+        </CardContent>
+
+        <Separator className="my-2 w-[80%]! mx-auto" />
+
+        <CardFooter className="flex gap-2">
+          <Button>Get Directions</Button>
+          <ButtonGroup>
+            <Button variant="secondary">Info</Button>
+            {isBookmarked ? (
+              <Button onClick={handleBookRemove} variant="destructive">
+                <BookmarkX />
+              </Button>
+            ) : (
+              <Button onClick={handleBook} variant="secondary">
+                <BookmarkIcon />
+              </Button>
+            )}
+          </ButtonGroup>
+        </CardFooter>
+      </Card>
+      {/* <div className="flex flex-col gap-1">
         <h2 className="text-2xl font-bold text-nowrap">{place.name}</h2>
         <div className="flex items-center justify-between">
           <span className="flex items-center gap-1 dark:text-gray-200 text-gray-700 text-lg">
@@ -84,7 +126,7 @@ function CustomPopup({ onClose, place }: Props) {
             </Button>
           )}
         </div>
-      </div>
+      </div> */}
     </Popup>
   );
 }
