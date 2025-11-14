@@ -1,5 +1,3 @@
-import { useMap } from "react-leaflet";
-
 import { Place } from "@/app/(lib)/(types)/Place";
 import { Button } from "@/components/ui/button";
 import {
