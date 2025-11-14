@@ -58,7 +58,7 @@ function Sidebar() {
             Bookmarks
           </Item>
           <Item icon={CirclePlus} opens="add">
-            Add a place
+            Add a Truck
           </Item>
           <Item icon={SettingsIcon} opens="settings">
             Settings
