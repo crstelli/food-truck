@@ -6,16 +6,20 @@ import { CustomMarker } from "./CustomMarker";
 import { ClickHandler } from "./ClickHandler";
 
 import { MAP_DEFAULT_ZOOM, MAP_DEFAULT_POSITION } from "@/app/(lib)/constants";
+import { useMapContext } from "../MapContext";
 
 export default function Map() {
   const { places } = useSidebarContext();
   const { theme } = useTheme();
+
+  const { mapRef } = useMapContext();
 
   return (
     <MapContainer
       center={MAP_DEFAULT_POSITION}
       zoom={MAP_DEFAULT_ZOOM}
       className="w-full h-full"
+      ref={mapRef}
       doubleClickZoom
     >
       {theme === "dark" ? (

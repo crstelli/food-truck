@@ -7,6 +7,7 @@ import { fetchPlaces, fetchReviews } from "@/app/(services)/apiPlaces";
 import { Sidebar } from "./(components)/(sidebar)/Sidebar";
 import { Map } from "./(components)/(map)/index";
 import { ContextProvider } from "./(components)/ContextProvider";
+import { MapProvider } from "./(components)/MapContext";
 
 interface MetadataProps {
   searchParams: SearchParams;
@@ -34,10 +35,12 @@ export default async function page() {
   return (
     <div className="max-w-screen h-screen grid grid-cols-[auto_1fr]">
       <ContextProvider places={places}>
-        <Sidebar />
-        <main className="w-full h-full flex items-center justify-center">
-          <Map />
-        </main>
+        <MapProvider>
+          <Sidebar />
+          <main className="w-full h-full flex items-center justify-center">
+            <Map />
+          </main>
+        </MapProvider>
       </ContextProvider>
     </div>
   );

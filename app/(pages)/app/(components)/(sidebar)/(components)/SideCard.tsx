@@ -1,3 +1,5 @@
+import { useMap } from "react-leaflet";
+
 import { Place } from "@/app/(lib)/(types)/Place";
 import { Button } from "@/components/ui/button";
 import {
@@ -8,12 +10,16 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { MapPin, Star } from "lucide-react";
+import { useMapContext } from "../../MapContext";
+import { PLACE_FOCUS_ZOOM } from "@/app/(lib)/constants";
 
 interface Props {
   place: Place;
 }
 
 function SideCard({ place }: Props) {
+  const { mapRef } = useMapContext();
+
   return (
     <Card key={place.id} className="flex flex-col gap-1 border-border/40">
       <CardHeader className="grid grid-cols-[1fr_auto] items-center">
@@ -30,7 +36,10 @@ function SideCard({ place }: Props) {
       </CardContent>
 
       <CardFooter className="w-full mt-2">
-        <Button className="w-full">
+        <Button
+          className="w-full"
+          onClick={() => mapRef.current.flyTo(place.location, PLACE_FOCUS_ZOOM)}
+        >
           <MapPin className="w-4 h-4" />
           Locate
         </Button>
