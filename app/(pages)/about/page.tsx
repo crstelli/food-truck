@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Navbar } from "@/app/(components)/(navbar)/Navbar";
+import { Navbar } from "@/components/custom/(navbar)/Navbar";
 import Image from "next/image";
 
 export const metadata: Metadata = {

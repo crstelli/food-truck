@@ -80,7 +80,7 @@ function Sidebar() {
         </li>
       </nav>
       {menu && (
-        <div className="px-4 py-15 overflow-auto min-w-110 bg-white dark:bg-gray-900">
+        <div className="px-4 py-15 overflow-auto flex flex-col min-w-110 bg-white dark:bg-gray-900">
           {menu === "search" && <Search />}
           {menu === "bookmarks" && <Bookmarks />}
           {menu === "add" && <Add />}

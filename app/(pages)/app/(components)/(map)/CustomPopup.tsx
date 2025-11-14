@@ -2,7 +2,7 @@ import { Popup } from "react-leaflet";
 
 import type { Place } from "@/app/(lib)/(types)/Place";
 import type { Bookmark } from "@/app/(lib)/(types)/Bookmark";
-import { Star } from "@/app/(components)/Star";
+import { Star } from "@/components/custom/Star";
 
 import { Button } from "@/components/ui/button";
 import { getAffordabilityColor } from "@/app/(lib)/getAffordabilityColor";
