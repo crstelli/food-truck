@@ -24,12 +24,7 @@ export default function RootLayout({ children }: Props) {
       <body
         className={`${nunito.className} max-w-screen min-h-screen flex flex-col selection:bg-orange-500 selection:text-orange-50`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
         </ThemeProvider>
       </body>

@@ -15,7 +15,7 @@ function Search() {
         type="text"
         value={typing}
         onChange={(e) => setTyping(e.target.value)}
-        className=" ring-orange-300 mb-4 focus:border-orange-500 mt-2 border-border/40"
+        className=" mb-4 mt-2 border-border/40"
       />
 
       {typing.length > 2 &&

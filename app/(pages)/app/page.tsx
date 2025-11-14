@@ -33,7 +33,7 @@ export default async function page() {
   });
 
   return (
-    <div className="max-w-screen h-screen grid grid-cols-[auto_1fr]">
+    <div className="max-w-screen h-screen relative flex">
       <ContextProvider places={places}>
         <MapProvider>
           <Sidebar />

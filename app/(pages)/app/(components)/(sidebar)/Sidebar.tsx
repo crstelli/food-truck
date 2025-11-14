@@ -30,7 +30,7 @@ function Sidebar() {
   const { setTheme, theme } = useTheme();
 
   return (
-    <aside className="grid grid-cols-[auto_auto] relative h-screen">
+    <aside className="grid grid-cols-[auto_auto] absolute top-0 left-0 h-screen z-401">
       {menu && (
         <button
           onClick={closeMenu}
@@ -40,14 +40,12 @@ function Sidebar() {
         </button>
       )}
       <nav
-        className={`bg-gray-50 dark:bg-gray-800 px-4 py-15 flex flex-col ${
+        className={`bg-gray-50 relative dark:bg-gray-800 px-4 py-15 items-start flex flex-col ${
           menu && "min-w-50"
         }`}
       >
-        <Link href="/" className="self-center">
-          <div className="size-10 relative">
-            <Image src={"/logo.svg"} alt="Logo of the App" fill />
-          </div>
+        <Link href="/" className={`relative size-8 mx-auto`}>
+          <Image src={"/logo.svg"} alt="Logo of the App" fill />
         </Link>
         <ul className="flex flex-col mt-27 gap-8">
           <Item icon={SearchIcon} opens="search">
@@ -66,20 +64,20 @@ function Sidebar() {
             Info
           </Item>
         </ul>
-        <li className="mt-20">
+        <li className="mt-auto list-none size-8 overflow-hidden flex items-center justify-center">
           {theme === "dark" ? (
-            <Button onClick={() => setTheme("light")}>
+            <Button size={"sm"} onClick={() => setTheme("light")}>
               <Moon />
             </Button>
           ) : (
-            <Button onClick={() => setTheme("dark")}>
+            <Button size={"sm"} onClick={() => setTheme("dark")}>
               <Sun />
             </Button>
           )}
         </li>
       </nav>
       {menu && (
-        <div className="px-4 py-15 overflow-auto min-w-110">
+        <div className="px-4 py-15 overflow-auto min-w-110 bg-white dark:bg-gray-900">
           {menu === "search" && <Search />}
           {menu === "bookmarks" && <Bookmarks />}
           {menu === "add" && <Add />}
