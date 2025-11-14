@@ -61,7 +61,7 @@ function Sidebar() {
         </ul>
       </nav>
       {menu && (
-        <div className="px-4 py-15 overflow-auto min-w-90">
+        <div className="px-4 py-15 overflow-auto min-w-100">
           {menu === "search" && <Search />}
           {menu === "bookmarks" && <Bookmarks />}
           {menu === "add" && <Add />}
