@@ -6,7 +6,7 @@ function TextLogo() {
       <div className="size-10 relative">
         <Image src="/logo.svg" alt="Logo of the app" fill />
       </div>
-      <span className="text-orange-500 font-bold text-4xl">FoodTruck</span>
+      <span className="text-gray-800 font-bold text-4xl">FoodTruck</span>
     </div>
   );
 }

@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
 
-import { Button } from "@/app/(components)/Button";
+import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
   title: "Home",
@@ -12,7 +12,7 @@ export default function page() {
   return (
     <main className="w-[90%] max-w-[1200px] mx-auto flex items-center justify-between my-auto">
       <div className="flex flex-col gap-3">
-        <h1 className="text-orange-500 font-bold text-6xl">
+        <h1 className="text-gray-800 font-bold text-6xl">
           Your favorites trucks
           <br />
           In one place
@@ -21,7 +21,7 @@ export default function page() {
           Over 100.000 food trucks around the world.
         </h2>
         <Link href="/app" className="self-start mt-8">
-          <Button>Check the App &rarr;</Button>
+          <Button>Check the App</Button>
         </Link>
       </div>
       <div className="w-[400px] aspect-video relative">
