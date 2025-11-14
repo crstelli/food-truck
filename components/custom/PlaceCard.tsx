@@ -17,7 +17,7 @@ function PlaceCard({ place }: Props) {
   const { mapRef } = useMapContext();
 
   return (
-    <Card className="max-w-82 mx-auto gap-2 py-4">
+    <Card className="max-w-[90%] mx-auto gap-2 py-4">
       <CardHeader className="flex justify-between">
         <H2>{place.name}</H2>
         <span className="flex gap-2 items-center font-bold">

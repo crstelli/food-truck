@@ -1,4 +1,4 @@
-import { SideCard } from "../(components)/SideCard";
+import { PlaceCard } from "@/components/custom/PlaceCard";
 import { useSidebarContext } from "../useSidebarContext";
 
 function Bookmarks() {
@@ -11,7 +11,7 @@ function Bookmarks() {
         <div className="mt-4">
           {bookmarks.map((bm) => {
             const place = places.find((place) => place.id === bm.id);
-            if (place) return <SideCard place={place} key={place.id} />;
+            if (place) return <PlaceCard place={place} key={place.id} />;
           })}
         </div>
       ) : (
