@@ -15,7 +15,7 @@ function Bookmarks() {
           })}
         </div>
       ) : (
-        <p>No places saved</p>
+        <p className="mt-10 text-center">No places saved</p>
       )}
     </>
   );

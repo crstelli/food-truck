@@ -59,10 +59,16 @@ function CustomPopup({ onClose, place }: Props) {
           </span>
         </div>
         <div className="flex mt-4 gap-2 justify-between">
-          <Button>
-            <Map />
-            Directions
-          </Button>
+          <a
+            target="blank"
+            href={`https://www.google.com/maps/dir/?api=1&origin=My+Location&destination=${place.location[0]},${place.location[1]}&travelmode=driving
+`}
+          >
+            <Button>
+              <Map />
+              Directions
+            </Button>
+          </a>
           <Button variant="secondary">
             <Info />
             Info

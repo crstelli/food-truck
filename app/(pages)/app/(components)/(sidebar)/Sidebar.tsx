@@ -79,7 +79,7 @@ function Sidebar() {
         </li>
       </nav>
       {menu && (
-        <div className="px-4 py-15 overflow-auto min-w-100">
+        <div className="px-4 py-15 overflow-auto min-w-110">
           {menu === "search" && <Search />}
           {menu === "bookmarks" && <Bookmarks />}
           {menu === "add" && <Add />}

@@ -36,7 +36,13 @@ function Info() {
             {place.rating_value} / 5
           </span>
         </div>
-        <Button className="self-center">Get Direction</Button>
+        <a
+          target="blank"
+          href={`https://www.google.com/maps/dir/?api=1&origin=My+Location&destination=${place.location[0]},${place.location[1]}&travelmode=driving
+`}
+        >
+          <Button className="self-center">Get Direction</Button>
+        </a>
       </div>
 
       <h2 className="mt-10 text-center text-xl">Last Reviews</h2>
