@@ -83,24 +83,6 @@ function CustomPopup({ onClose, place }: Props) {
               <BookmarkIcon />
             </Button>
           )}
-          {/* <Button className="flex items-center gap-2 text-nowrap">
-            <Map />
-            Directions
-          </Button>
-          <Button className="flex items-center gap-2" variant="secondary">
-            <Info />
-            Info
-          </Button>
-          {isBookmarked ? (
-            <p className="text-nowrap flex items-center gap-1">
-              <Check strokeWidth={1} />
-              In bookmarks
-            </p>
-          ) : (
-            <Button onClick={handleBook} variant="secondary">
-              <BookmarkIcon />
-            </Button>
-          )} */}
         </div>
       </div>
     </Popup>
