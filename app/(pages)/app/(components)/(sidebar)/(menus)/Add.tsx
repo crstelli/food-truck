@@ -1,35 +1,27 @@
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+
 import { useSidebarContext } from "../useSidebarContext";
-import { Button } from "@/app/(components)/Button";
 
 function Add() {
   const { position } = useSidebarContext();
 
   return (
     <section>
-      <form className="flex flex-col">
-        <h1 className="text-2xl font-bold text-center">Add a place</h1>
+      <h1 className="text-3xl text-center">Add a place</h1>
 
-        <label>Place name</label>
-        <input className="border border-orange-500" type="text" />
+      <form className="flex flex-col mt-4 gap-1">
+        <label className="text-lg">Place name</label>
+        <Input type="text" />
 
-        <label>Position: Lat</label>
-        <input
-          value={position[0]}
-          className="border border-orange-500"
-          type="number"
-          disabled
-        />
+        <label className="text-lg mt-3">Position: Latitude</label>
+        <Input value={position[0]} type="number" disabled />
 
-        <label>Position: Lon</label>
-        <input
-          value={position[1]}
-          className="border border-orange-500"
-          type="number"
-          disabled
-        />
+        <label className="text-lg mt-3">Position: Longitude</label>
+        <Input value={position[1]} type="number" disabled />
 
-        <label>Affordability</label>
-        <input className="border border-orange-500" type="text" />
+        <label className="text-lg mt-3">Affordability</label>
+        <Input type="text" />
 
         <Button type="submit" className="mt-2">
           Add
