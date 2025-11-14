@@ -40,14 +40,17 @@ function Sidebar() {
         </button>
       )}
       <nav
-        className={`bg-gray-50 relative dark:bg-gray-800 px-4 py-15 items-start flex flex-col ${
+        className={`bg-gray-50 relative dark:bg-gray-800 px-4 py-15 items-start grid grid-rows-[1fr_3fr] ${
           menu && "min-w-50"
         }`}
       >
-        <Link href="/" className={`relative size-8 mx-auto`}>
+        <Link
+          href="/"
+          className={`relative mx-auto ${menu ? "size-15" : "size-8"}`}
+        >
           <Image src={"/logo.svg"} alt="Logo of the App" fill />
         </Link>
-        <ul className="flex flex-col mt-27 gap-8">
+        <ul className="flex flex-col gap-8">
           <Item icon={SearchIcon} opens="search">
             Search
           </Item>
