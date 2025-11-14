@@ -12,7 +12,6 @@ import { Bookmark as BookmarkIcon, BookmarkX, Info, Map } from "lucide-react";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
 } from "@/components/ui/card";
@@ -47,7 +46,7 @@ function CustomPopup({ onClose, place }: Props) {
       interactive
       className="place-popup"
     >
-      <Card className="gap-2">
+      <Card className="gap-2 border-none">
         <CardHeader className="text-nowrap flex justify-between">
           <h2 className="font-bold text-xl">{place.name}</h2>
         </CardHeader>
@@ -70,9 +69,20 @@ function CustomPopup({ onClose, place }: Props) {
         <Separator className="my-2 w-[80%]! mx-auto" />
 
         <CardFooter className="flex gap-2">
-          <Button>Get Directions</Button>
+          <a
+            target="blank"
+            href={`https://www.google.com/maps/dir/?api=1&origin=My+Location&destination=${place.location[0]},${place.location[1]}&travelmode=driving
+`}
+          >
+            <Button>
+              <Map />
+              Directions
+            </Button>
+          </a>
           <ButtonGroup>
-            <Button variant="secondary">Info</Button>
+            <Button variant="secondary">
+              <Info />
+            </Button>
             {isBookmarked ? (
               <Button onClick={handleBookRemove} variant="destructive">
                 <BookmarkX />

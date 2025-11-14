@@ -6,16 +6,20 @@ import type { LeafletMouseEvent } from "leaflet";
 import type { Place as placeType } from "@/app/(lib)/(types)/Place";
 
 import { PLACE_FOCUS_ZOOM } from "@/app/(lib)/constants";
-import { markerIcon } from "@/app/(lib)/markerIcon";
+import { markerIconLight, markerIconDark } from "@/app/(lib)/markerIcon";
 
 import { CustomPopup } from "./CustomPopup";
 import { useSidebarContext } from "../(sidebar)/useSidebarContext";
+import { useTheme } from "next-themes";
 
 interface Props {
   place: placeType;
 }
 
 function CustomMarker({ place }: Props) {
+  const { theme } = useTheme();
+  const icon = theme === "dark" ? markerIconDark : markerIconLight;
+
   const map = useMap();
   const searchParams = useSearchParams();
 
@@ -44,7 +48,7 @@ function CustomMarker({ place }: Props) {
     <Marker
       eventHandlers={{ click: handleOpen }}
       position={place.location}
-      icon={markerIcon}
+      icon={icon}
     >
       <CustomPopup onClose={handleClose} place={place} />
     </Marker>
