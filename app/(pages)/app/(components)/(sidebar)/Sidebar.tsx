@@ -23,32 +23,27 @@ import {
 } from "lucide-react";
 
 function Sidebar() {
-  const { menu, setMenu, closeMenu } = useSidebarContext();
+  const { menu, closeMenu } = useSidebarContext();
 
   return (
-    <aside className="grid grid-cols-[auto_auto] relative h-screen ">
-      {menu ? (
+    <aside className="grid grid-cols-[auto_auto] relative h-screen">
+      {menu && (
         <button
           onClick={closeMenu}
-          className="aspect-1/2 w-7 bg-orange-400 absolute text-orange-50 flex rounded-r-xl cursor-pointer items-center justify-center top-13 right-0 translate-x-full z-1001"
+          className="aspect-1/2 w-7 bg-gray-800 absolute text-orange-50 flex rounded-r-xl cursor-pointer items-center justify-center top-13 right-0 translate-x-full z-1001"
         >
           <ChevronLeft />
         </button>
-      ) : (
-        <button
-          onClick={() => setMenu("search")}
-          className="aspect-1/2 w-7 bg-orange-400 absolute text-orange-50 flex rounded-r-xl cursor-pointer items-center justify-center top-13 right-0 translate-x-full z-1001"
-        >
-          <ChevronRight />
-        </button>
       )}
-      <nav className="bg-linear-to-b bg-gray-50 px-4 py-15 flex flex-col items-center">
-        <Link href="/">
-          <div className="size-13 relative">
+      <nav
+        className={`bg-gray-50 px-4 py-15 flex flex-col ${menu && "min-w-50"}`}
+      >
+        <Link href="/" className="self-center">
+          <div className="size-10 relative">
             <Image src={"/logo.svg"} alt="Logo of the App" fill />
           </div>
         </Link>
-        <ul className="flex flex-col mt-27 gap-6">
+        <ul className="flex flex-col mt-27 gap-8">
           <Item icon={SearchIcon} opens="search">
             Search
           </Item>

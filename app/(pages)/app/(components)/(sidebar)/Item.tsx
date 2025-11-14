@@ -13,14 +13,20 @@ interface Props {
 }
 function Item({ icon: Icon, children, opens }: Props) {
   const { menu, setMenu } = useSidebarContext();
+  const active = menu === opens;
 
   return (
     <li
       onClick={() => setMenu(opens)}
-      className="flex items-center text-gray-800 cursor-pointer gap-2 font-bold"
+      className={`flex items-center text-gray-500 hover:text-secondary-foreground duration-150 cursor-pointer gap-2 ${
+        active && "text-secondary-foreground font-bold"
+      }`}
     >
-      <Icon className="size-8 stroke-2" />
-      {menu && <span className="text-lg">{children}</span>}
+      <Icon
+        strokeWidth="1.5"
+        className={`size-7 ${active && "text-primary"}`}
+      />
+      {menu && <span>{children}</span>}
     </li>
   );
 }

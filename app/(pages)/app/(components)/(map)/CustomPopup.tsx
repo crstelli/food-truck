@@ -8,10 +8,8 @@ import { getAffordabilityColor } from "@/app/(lib)/getAffordabilityColor";
 import { useSidebarContext } from "../(sidebar)/useSidebarContext";
 
 import {
-  BookmarkCheck,
   Bookmark as BookmarkIcon,
   BookmarkX,
-  Check,
   Info,
   Map,
   Star,
