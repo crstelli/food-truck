@@ -16,7 +16,6 @@ import {
   Bookmark,
   CirclePlus,
   ChevronLeft,
-  ChevronRight,
   Info as InfoIcon,
   Search as SearchIcon,
   Settings as SettingsIcon,
@@ -30,7 +29,7 @@ function Sidebar() {
       {menu && (
         <button
           onClick={closeMenu}
-          className="aspect-1/2 w-7 bg-gray-800 absolute text-orange-50 flex rounded-r-xl cursor-pointer items-center justify-center top-13 right-0 translate-x-full z-1001"
+          className="aspect-1/2 w-7 bg-gray-800 absolute text-white flex rounded-r-xl cursor-pointer items-center justify-center top-13 right-0 translate-x-full z-1001"
         >
           <ChevronLeft />
         </button>
@@ -62,7 +61,7 @@ function Sidebar() {
         </ul>
       </nav>
       {menu && (
-        <div className="px-4 py-15 overflow-auto">
+        <div className="px-4 py-15 overflow-auto min-w-90">
           {menu === "search" && <Search />}
           {menu === "bookmarks" && <Bookmarks />}
           {menu === "add" && <Add />}

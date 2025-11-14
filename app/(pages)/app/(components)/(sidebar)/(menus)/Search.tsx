@@ -10,22 +10,22 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { MapPin } from "lucide-react";
+import { MapPin, Star } from "lucide-react";
 
 function Search() {
   const [typing, setTyping] = useState("");
   const { places } = useSidebarContext();
 
   return (
-    <div>
-      <h1 className="text-3xl font-bold text-center text-gray-800">
+    <>
+      <h1 className="text-2xl font-bold text-center text-gray-800">
         Search for a place
       </h1>
       <Input
         type="text"
         value={typing}
         onChange={(e) => setTyping(e.target.value)}
-        className=" ring-orange-300 mb-4 focus:border-orange-500 mt-2 border-gray-400"
+        className=" ring-orange-300 mb-4 focus:border-orange-500 mt-2 border-border/40"
       />
 
       {typing.length > 2 &&
@@ -34,42 +34,34 @@ function Search() {
             place.name.toLowerCase().includes(typing.toLowerCase())
           )
           .map((place) => (
-            // <div
-            //   key={place.id}
-            //   className="mt-10 grid grid-cols-2 border border-orange-500 text-center"
-            // >
-            //   <h2>{place.name}</h2>
-            //   <h3>Ratings: {place.rating_value}</h3>
-            //   <button className="col-span-2">Locate</button>
-            // </div>
-
             <Card
               key={place.id}
-              className="border border-gray-400 flex flex-col gap-1"
+              className="flex flex-col gap-1 border-border/40"
             >
-              <CardHeader>
-                <CardTitle className="text-xl font-semibold">
+              <CardHeader className="grid grid-cols-[1fr_auto] items-center">
+                <CardTitle className="text-lg font-bold">
                   {place.name}
                 </CardTitle>
+                <span className="font-medium flex gap-2 text-lg text-gray-600">
+                  {place.rating_value}{" "}
+                  <Star className="text-yellow-400 fill-yellow-400" />
+                </span>
               </CardHeader>
 
-              <CardContent>
-                <div className="flex items-center gap-2">
-                  <span className="font-medium text-gray-900">
-                    {place.rating_value} ⭐
-                  </span>
-                </div>
+              <CardContent className="w-90 text-gray-500">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil
+                veniam iste amet dolor.
               </CardContent>
 
-              <CardFooter>
-                <Button className="border border-gray-400 flex items-center gap-1">
+              <CardFooter className="w-full mt-2">
+                <Button className="w-full">
                   <MapPin className="w-4 h-4" />
-                  Mostra sulla mappa
+                  Locate
                 </Button>
               </CardFooter>
             </Card>
           ))}
-    </div>
+    </>
   );
 }
 
