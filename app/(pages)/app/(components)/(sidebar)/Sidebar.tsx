@@ -30,7 +30,7 @@ function Sidebar() {
   const { setTheme, theme } = useTheme();
 
   return (
-    <aside className="grid grid-cols-[auto_auto] absolute top-0 left-0 h-screen z-401 max-w-170">
+    <aside className="grid grid-cols-[auto_auto] absolute top-0 left-0 h-screen z-401 w-160">
       {menu && (
         <button
           onClick={closeMenu}
