@@ -2,6 +2,7 @@ import "@/app/(styles)/globals.css";
 import "leaflet/dist/leaflet.css";
 
 import type { Metadata } from "next";
+import { ThemeProvider } from "./(components)/ThemeProvider";
 
 import { Nunito } from "next/font/google";
 const nunito = Nunito({ subsets: ["latin"] });
@@ -19,11 +20,18 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Props) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${nunito.className} max-w-screen min-h-screen flex flex-col selection:bg-orange-500 selection:text-orange-50`}
       >
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

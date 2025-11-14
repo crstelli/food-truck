@@ -3,7 +3,9 @@
 import Link from "next/link";
 import Image from "next/image";
 
+import { Button } from "@/components/ui/button";
 import { SidebarContext, useSidebarContext } from "./useSidebarContext";
+import { useTheme } from "next-themes";
 import { Item } from "./Item";
 
 import { Search } from "./(menus)/Search";
@@ -19,10 +21,13 @@ import {
   Info as InfoIcon,
   Search as SearchIcon,
   Settings as SettingsIcon,
+  Moon,
+  Sun,
 } from "lucide-react";
 
 function Sidebar() {
   const { menu, closeMenu } = useSidebarContext();
+  const { setTheme, theme } = useTheme();
 
   return (
     <aside className="grid grid-cols-[auto_auto] relative h-screen">
@@ -35,7 +40,9 @@ function Sidebar() {
         </button>
       )}
       <nav
-        className={`bg-gray-50 px-4 py-15 flex flex-col ${menu && "min-w-50"}`}
+        className={`bg-gray-50 dark:bg-gray-800 px-4 py-15 flex flex-col ${
+          menu && "min-w-50"
+        }`}
       >
         <Link href="/" className="self-center">
           <div className="size-10 relative">
@@ -59,6 +66,17 @@ function Sidebar() {
             Info
           </Item>
         </ul>
+        <li className="mt-20">
+          {theme === "dark" ? (
+            <Button onClick={() => setTheme("light")}>
+              <Moon />
+            </Button>
+          ) : (
+            <Button onClick={() => setTheme("dark")}>
+              <Sun />
+            </Button>
+          )}
+        </li>
       </nav>
       {menu && (
         <div className="px-4 py-15 overflow-auto min-w-100">

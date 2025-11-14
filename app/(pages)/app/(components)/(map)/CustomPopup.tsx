@@ -46,7 +46,7 @@ function CustomPopup({ onClose, place }: Props) {
       <div className="flex flex-col gap-1">
         <h2 className="text-2xl font-bold text-nowrap">{place.name}</h2>
         <div className="flex items-center justify-between">
-          <span className="flex items-center gap-1 text-gray-700 text-lg">
+          <span className="flex items-center gap-1 dark:text-gray-200 text-gray-700 text-lg">
             <Star className="text-yellow-500 fill-yellow-500" />
             {place.rating_value} ({place.reviews.length})
           </span>

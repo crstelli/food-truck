@@ -5,7 +5,7 @@
 
 /* Map Popups customization */
 .place-popup .leaflet-popup-content-wrapper {
-  @apply bg-orange-50 font-[Nunito] w-full;
+  @apply bg-orange-50 font-[Nunito] w-full dark:bg-gray-800 dark:text-white;
 
   max-width: none !important;
   max-height: none !important;
@@ -16,11 +16,17 @@
 }
 
 .place-popup .leaflet-popup-tip {
-  @apply bg-orange-50;
+  @apply bg-orange-50 dark:bg-gray-800;
 }
 
 .leaflet-control-container {
   @apply absolute right-17;
+}
+
+.leaflet-control-zoom-in,
+.leaflet-control-zoom-out {
+  @apply dark:bg-neutral-900!;
+  @apply dark:text-gray-300;
 }
 
 @theme inline {
@@ -174,7 +180,7 @@
 
   --popover-foreground: oklch(0.985 0.002 247.839);
 
-  --primary: oklch(0.928 0.006 264.531);
+  --primary: oklch(70.5% 0.213 47.604);
 
   --primary-foreground: oklch(0.21 0.034 264.665);
 
