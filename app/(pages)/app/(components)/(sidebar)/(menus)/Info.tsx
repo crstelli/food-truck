@@ -3,8 +3,10 @@ import { useSidebarContext } from "../useSidebarContext";
 
 import { Button } from "@/components/ui/button";
 import { getAffordabilityColor } from "@/app/(lib)/getAffordabilityColor";
-import { Star } from "lucide-react";
-import { H2 } from "@/components/custom/typography";
+import { Bookmark, Map, StarIcon } from "lucide-react";
+import { H1, H2 } from "@/components/custom/typography";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Star } from "@/components/custom/Star";
 
 function Info() {
   const searchParams = useSearchParams();
@@ -17,49 +19,71 @@ function Info() {
 
   return (
     <>
-      <div className="grid grid-cols-2 gap-4">
-        <h1 className="text-3xl col-span-2 text-center">{place.name}</h1>
-        <div>
-          <h2 className="font-bold">Affordability</h2>
-          <span className={getAffordabilityColor(place.affordability)}>
-            {place.affordability}
-          </span>
-        </div>
-        <div>
-          <h2 className="font-bold">Added</h2>
-          <span className="text-gray-600">
-            {new Date(place.created_at).toLocaleString()}
-          </span>
-        </div>
-        <div>
-          <h2 className="font-bold">Rating</h2>
-          <span className="flex items-center gap-1">
-            <Star size={20} className="text-yellow-400 fill-yellow-400" />
-            {place.rating_value} / 5
-          </span>
-        </div>
-        <a
-          target="blank"
-          href={`https://www.google.com/maps/dir/?api=1&origin=My+Location&destination=${place.location[0]},${place.location[1]}&travelmode=driving
-`}
-        >
-          <Button className="self-center">Get Direction</Button>
-        </a>
-      </div>
+      <Card className="flex flex-col">
+        <CardHeader>
+          <H1>{place.name}</H1>
+        </CardHeader>
+        <CardContent className="grid grid-cols-2 gap-4 items-center">
+          <div>
+            <h2 className="font-bold">Affordability</h2>
+            <span className={getAffordabilityColor(place.affordability)}>
+              {place.affordability}
+            </span>
+          </div>
+          <div>
+            <h2 className="font-bold">Added</h2>
+            <span className="text-muted-foreground">
+              {new Date(place.created_at).toLocaleDateString()}
+            </span>
+          </div>
+          <div>
+            <h2 className="font-bold">Rating</h2>
+            <span className="flex items-center gap-2 text-lg">
+              <Star />
+              {place.rating_value}
+            </span>
+          </div>
+          <div>
+            <h2 className="font-bold">Actions</h2>
 
-      <h2 className="mt-10 text-center text-xl">Last Reviews</h2>
-      <div className="flex flex-col gap-2 overflow-auto">
-        {place.reviews.map((rev) => (
+            <div className="flex gap-1">
+              <a
+                target="blank"
+                href={`https://www.google.com/maps/dir/?api=1&origin=My+Location&destination=${place.location[0]},${place.location[1]}&travelmode=driving
+              `}
+              >
+                <Button className="self-center">
+                  <Map />
+                  Directions
+                </Button>
+              </a>
+              <Button variant="secondary">
+                <Bookmark />
+              </Button>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      <H2 className="mt-10 text-center">Last Reviews</H2>
+      <div className="flex flex-col gap-2 overflow-auto mt-1">
+        {place.reviews.splice(0, 3).map((rev) => (
           <div
             key={rev.id}
-            className="grid grid-cols-2 p-2 border border-border rounded-md"
+            className="grid grid-cols-2 p-4 border border-border rounded-md"
           >
             <h3 className="font-bold">{rev.user}</h3>
-            <span className="flex items-center gap-1">
-              {rev.rating}
-              <Star size={20} className="text-yellow-400 fill-yellow-400" />
+            <span className="flex items-center gap-1 justify-self-end">
+              {[...Array(rev.rating)].map((_, i) => (
+                <Star key={i} />
+              ))}
+              {[...Array(5 - rev.rating)].map((_, i) => (
+                <StarIcon key={i} />
+              ))}
             </span>
-            <span className="col-span-2 mt-2 text-gray-600">{rev.content}</span>
+            <span className="col-span-2 mt-4 text-muted-foreground">
+              {rev.content}
+            </span>
           </div>
         ))}
       </div>
