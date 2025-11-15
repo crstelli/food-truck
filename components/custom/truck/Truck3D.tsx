@@ -1,22 +1,22 @@
-"use client"; // obbligatorio in Next.js 13+ se usi React Three Fiber
+"use client";
 
 import { Suspense, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
+import type { Object3D } from "three";
 
 function TruckModel() {
-  const ref = useRef<any>(null);
+  const ref = useRef<Object3D>(null);
   const gltf = useGLTF("/models/scene.glb");
-  const [spin, setSpin] = useState(10); // velocità iniziale alta
-  const normalSpeed = 0.3; // velocità normale dopo lo spin
+  const [spin, setSpin] = useState(10);
+  const normalSpeed = 0.3;
 
-  useFrame((state, delta) => {
+  useFrame((_, delta) => {
     if (ref.current) {
       ref.current.rotation.y += spin * delta;
 
-      // decresce velocemente la velocità fino a quella normale
       if (spin > normalSpeed) {
-        setSpin(spin - delta * 5); // decelerazione
+        setSpin(spin - delta * 5);
       } else {
         setSpin(normalSpeed);
       }
