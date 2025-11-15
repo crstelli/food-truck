@@ -7,6 +7,7 @@ import type { LatLngTuple } from "leaflet";
 import type { SidebarMenu } from "@/app/(lib)/(types)/SidebarMenu";
 import type { Place } from "@/app/(lib)/(types)/Place";
 import type { Bookmark } from "@/app/(lib)/(types)/Bookmark";
+import { usePathname, useRouter } from "next/navigation";
 
 interface Props {
   children: React.ReactNode;
@@ -18,7 +19,13 @@ function ContextProvider({ children, places }: Props) {
   const [position, setPosition] = useState<LatLngTuple | []>([]);
   const [bookmarks, setBookmarks] = useState<Bookmark[] | []>([]);
 
-  const closeMenu = () => setMenu("");
+  const { replace } = useRouter();
+  const pathname = usePathname();
+
+  const closeMenu = () => {
+    setMenu("");
+    replace(pathname);
+  };
 
   function addBookmark(bm: Bookmark) {
     setBookmarks((bookmarks) => [...bookmarks, bm]);
