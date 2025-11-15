@@ -24,11 +24,11 @@ function BookmarkButton({ placeId }: Props) {
     removeBookmark(placeId);
   }
   return isBookmarked ? (
-    <Button onClick={handleBookRemove} variant="destructive">
+    <Button onClick={handleBookRemove} variant="destructive" size="icon">
       <BookmarkX />
     </Button>
   ) : (
-    <Button onClick={handleBook} variant="secondary">
+    <Button onClick={handleBook} variant="secondary" size="icon">
       <BookmarkIcon />
     </Button>
   );

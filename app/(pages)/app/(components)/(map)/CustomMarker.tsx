@@ -24,7 +24,7 @@ function CustomMarker({ place }: Props) {
   const searchParams = useSearchParams();
 
   const pathname = usePathname();
-  const { setMenu } = useSidebarContext();
+  const { setMenu, closeMenu } = useSidebarContext();
   const { replace } = useRouter();
 
   function handleOpen(e: LeafletMouseEvent) {
@@ -38,6 +38,7 @@ function CustomMarker({ place }: Props) {
   }
 
   function handleClose() {
+    closeMenu();
     const params = new URLSearchParams(searchParams);
 
     params.delete("place");

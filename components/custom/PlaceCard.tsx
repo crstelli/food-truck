@@ -3,12 +3,16 @@ import { Button } from "@/components/ui/button";
 
 import { Star } from "@/components/custom/Star";
 
-import { MapPin } from "lucide-react";
+import { Info, MapPin } from "lucide-react";
 import { useMapContext } from "@/app/(pages)/app/(components)/MapContext";
 import { PLACE_FOCUS_ZOOM } from "@/app/(lib)/constants";
 import { Card, CardContent, CardFooter, CardHeader } from "../ui/card";
 import { H2, P } from "./typography";
 import { BookmarkButton } from "./BookmarkButton";
+import { ButtonGroup } from "../ui/button-group";
+import { usePathname, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
+import { useSidebarContext } from "@/app/(pages)/app/(components)/(sidebar)/useSidebarContext";
 
 interface Props {
   place: Place;
@@ -16,6 +20,21 @@ interface Props {
 
 function PlaceCard({ place }: Props) {
   const { mapRef } = useMapContext();
+  const searchParams = useSearchParams();
+
+  const { replace } = useRouter();
+  const pathname = usePathname();
+
+  const { setMenu } = useSidebarContext();
+
+  function handleOpen() {
+    const params = new URLSearchParams(searchParams);
+
+    params.set("place_id", String(place.id));
+    replace(`${pathname}?${params.toString()}`);
+
+    setMenu("info");
+  }
 
   return (
     <Card className="w-full mx-auto gap-2 py-4">
@@ -41,26 +60,17 @@ function PlaceCard({ place }: Props) {
           <MapPin className="w-4 h-4" />
           Locate
         </Button>
-        <BookmarkButton placeId={place.id} />
+        <ButtonGroup>
+          <Button onClick={handleOpen} variant="secondary" size="icon">
+            <Info />
+          </Button>
+          <BookmarkButton placeId={place.id} />
+        </ButtonGroup>
         <span className="text-muted-foreground ml-auto">
           {place.reviews.length} reviews
         </span>
       </CardFooter>
     </Card>
-    // <div key={place.id} className="flex flex-col gap-1 border-border/40">
-    //   <div className="grid grid-cols-[1fr_auto] items-center">
-    //   </div>
-
-    //   <footer className="w-full mt-2">
-    //     <Button
-    //       className="w-full"
-    //       onClick={() => mapRef.current.flyTo(place.location, PLACE_FOCUS_ZOOM)}
-    //     >
-    //       <MapPin className="w-4 h-4" />
-    //       Locate
-    //     </Button>
-    //   </footer>
-    // </div>
   );
 }
 
