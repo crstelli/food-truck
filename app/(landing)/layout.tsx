@@ -6,7 +6,7 @@ interface Props {
 
 export default function RootLayout({ children }: Props) {
   return (
-    <div className="h-screen w-screen bg-orange-50 flex flex-col p-10">
+    <div className="h-screen w-screen flex flex-col p-10">
       <Navbar />
       {children}
     </div>

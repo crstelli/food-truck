@@ -1,5 +1,7 @@
+type Child = string | React.ReactElement<"br">;
+
 interface Props {
-  children: string;
+  children: Child | Child[];
   className?: React.ComponentProps<"div">["className"];
 }
 

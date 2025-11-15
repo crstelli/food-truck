@@ -17,8 +17,8 @@ interface Props {
 }
 
 function CustomMarker({ place }: Props) {
-  const { theme } = useTheme();
-  const icon = theme === "dark" ? markerIconDark : markerIconLight;
+  const { resolvedTheme } = useTheme();
+  const icon = resolvedTheme === "dark" ? markerIconDark : markerIconLight;
 
   const map = useMap();
   const searchParams = useSearchParams();

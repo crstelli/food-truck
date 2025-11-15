@@ -30,7 +30,7 @@
 
 .leaflet-control-zoom-in,
 .leaflet-control-zoom-out {
-  @apply dark:bg-neutral-900!  dark:text-neutral-400! rounded-md! border-none!;
+  @apply dark:bg-neutral-900! dark:text-neutral-400! rounded-md! border-none!;
 }
 
 @theme inline {
@@ -124,7 +124,7 @@
   --secondary-foreground: oklch(0.21 0.034 264.665);
 
   --muted: oklch(0.967 0.003 264.542);
-  --muted-foreground: oklch(0.551 0.027 264.364);
+  --muted-foreground: oklch(44.6% 0.03 256.802);
 
   --accent: oklch(0.967 0.003 264.542);
   --accent-foreground: oklch(0.21 0.034 264.665);
@@ -161,7 +161,7 @@
 }
 
 .dark {
-  --background: oklch(0.13 0.028 261.692);
+  --background: oklch(0.21 0.034 264.665);
   --foreground: oklch(0.985 0.002 247.839);
 
   --card: oklch(0.21 0.034 264.665);

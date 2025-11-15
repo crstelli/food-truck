@@ -24,6 +24,7 @@ import {
   Moon,
   Sun,
 } from "lucide-react";
+import { ThemeButton } from "@/components/custom/ThemeButton";
 
 function Sidebar() {
   const { menu, closeMenu } = useSidebarContext();
@@ -67,16 +68,8 @@ function Sidebar() {
             Info
           </Item>
         </ul>
-        <li className="mt-auto list-none size-8 overflow-hidden flex items-center justify-center">
-          {theme === "dark" ? (
-            <Button size={"sm"} onClick={() => setTheme("light")}>
-              <Moon />
-            </Button>
-          ) : (
-            <Button size={"sm"} onClick={() => setTheme("dark")}>
-              <Sun />
-            </Button>
-          )}
+        <li className="mt-auto list-none size-8 overflow-hidden rounded-md flex items-center justify-center">
+          <ThemeButton />
         </li>
       </nav>
       {menu && (

@@ -10,7 +10,7 @@ import { useMapContext } from "../MapContext";
 
 export default function Map() {
   const { places } = useSidebarContext();
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
 
   const { mapRef } = useMapContext();
 
@@ -22,7 +22,7 @@ export default function Map() {
       ref={mapRef}
       doubleClickZoom
     >
-      {theme === "dark" ? (
+      {resolvedTheme === "dark" ? (
         <TileLayer url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png" />
       ) : (
         <TileLayer url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png" />

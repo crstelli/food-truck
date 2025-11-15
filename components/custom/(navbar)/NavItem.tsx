@@ -16,8 +16,8 @@ function NavItem({ children }: Props) {
   return (
     <Link href={ref}>
       <li
-        className={`text-xl uppercase text-gray-800 font-light ${
-          active && "border-b border-orange-500 text-orange-500"
+        className={`text-xl uppercase font-light ${
+          active && "border-b border-primary text-primary"
         }`}
       >
         {children}
