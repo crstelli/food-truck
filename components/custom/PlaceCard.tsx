@@ -25,7 +25,7 @@ function PlaceCard({ place }: Props) {
   const { replace } = useRouter();
   const pathname = usePathname();
 
-  const { setMenu } = useSidebarContext();
+  const { setMenu, closeMenu } = useSidebarContext();
 
   function handleOpen() {
     const params = new URLSearchParams(searchParams);
@@ -55,7 +55,10 @@ function PlaceCard({ place }: Props) {
 
       <CardFooter className="mt-2 flex gap-2">
         <Button
-          onClick={() => mapRef.current.flyTo(place.location, PLACE_FOCUS_ZOOM)}
+          onClick={() => {
+            mapRef.current.flyTo(place.location, PLACE_FOCUS_ZOOM);
+            closeMenu();
+          }}
         >
           <MapPin className="w-4 h-4" />
           Locate

@@ -26,7 +26,7 @@ function Item({ icon: Icon, children, opens }: Props) {
         strokeWidth="1.5"
         className={`size-7 ${active && "text-primary"}`}
       />
-      {menu && <span>{children}</span>}
+      {menu && <span className="hidden md:block">{children}</span>}
     </li>
   );
 }

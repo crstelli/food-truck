@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { MapPin, Star } from "lucide-react";
 import { useMapContext } from "../../MapContext";
 import { PLACE_FOCUS_ZOOM } from "@/app/(lib)/constants";
+import { useSidebarContext } from "../useSidebarContext";
 
 interface Props {
   place: Place;
@@ -11,6 +12,7 @@ interface Props {
 
 function SideCard({ place }: Props) {
   const { mapRef } = useMapContext();
+  const { closeMenu } = useSidebarContext();
 
   return (
     <div key={place.id} className="flex flex-col gap-1 border-border/40">
@@ -30,7 +32,10 @@ function SideCard({ place }: Props) {
       <footer className="w-full mt-2">
         <Button
           className="w-full"
-          onClick={() => mapRef.current.flyTo(place.location, PLACE_FOCUS_ZOOM)}
+          onClick={() => {
+            mapRef.current.flyTo(place.location, PLACE_FOCUS_ZOOM);
+            closeMenu();
+          }}
         >
           <MapPin className="w-4 h-4" />
           Locate

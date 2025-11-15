@@ -17,6 +17,7 @@ function Search() {
         type="text"
         value={typing}
         onChange={(e) => setTyping(e.target.value)}
+        placeholder="Search for a Truck"
         className="mt-6 w-[80%] mx-auto"
       />
 
