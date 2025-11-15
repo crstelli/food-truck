@@ -3,9 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import { Button } from "@/components/ui/button";
 import { SidebarContext, useSidebarContext } from "./useSidebarContext";
-import { useTheme } from "next-themes";
 import { Item } from "./Item";
 
 import { Search } from "./(menus)/Search";
@@ -21,27 +19,24 @@ import {
   Info as InfoIcon,
   Search as SearchIcon,
   Settings as SettingsIcon,
-  Moon,
-  Sun,
 } from "lucide-react";
 import { ThemeButton } from "@/components/custom/ThemeButton";
 
 function Sidebar() {
   const { menu, closeMenu } = useSidebarContext();
-  const { setTheme, theme } = useTheme();
 
   return (
     <aside className="grid grid-cols-[auto_1fr] absolute top-0 left-0 h-screen z-401 w-160">
       {menu && (
         <button
           onClick={closeMenu}
-          className="aspect-1/2 w-7 bg-gray-800 absolute text-white flex rounded-r-xl cursor-pointer items-center justify-center top-13 right-0 translate-x-full z-1001"
+          className="aspect-1/2 w-7 bg-background absolute flex rounded-r-xl cursor-pointer items-center justify-center top-13 right-0 translate-x-full z-1001"
         >
           <ChevronLeft />
         </button>
       )}
       <nav
-        className={`bg-gray-50 relative dark:bg-gray-800 px-4 py-15 items-start grid grid-rows-[1fr_3fr] ${
+        className={`relative bg-secondary px-4 py-15 items-start grid grid-rows-[1fr_3fr] ${
           menu && "min-w-50"
         }`}
       >
