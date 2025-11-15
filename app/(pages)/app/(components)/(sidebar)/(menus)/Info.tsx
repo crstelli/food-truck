@@ -67,7 +67,7 @@ function Info() {
 
       <H2 className="mt-10 text-center">Last Reviews</H2>
       <div className="flex flex-col gap-2 mt-1">
-        {place.reviews.splice(0, 3).map((rev) => (
+        {place.reviews.slice(0, 3).map((rev) => (
           <div
             key={rev.id}
             className="grid grid-cols-2 p-4 border border-border rounded-md"
