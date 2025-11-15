@@ -11,21 +11,21 @@ export const metadata: Metadata = {
 
 export default function page() {
   return (
-    <main className="w-[90%] max-w-[1200px] mx-auto flex items-center justify-between my-auto">
+    <main className="w-[95%] max-w-[1200px] mx-auto flex flex-col md:flex-row items-center sm:justify-between my-auto">
       <div className="flex flex-col gap-3">
-        <H1 className="text-6xl text-left font-bold">
+        <H1 className="text-2xl mt-15 md:mt-0 text-nowrap sm:text-4xl text-center md:text-left font-bold">
           Your favorites trucks
           <br />
           In one place
         </H1>
-        <H2 className="text-2xl font-light">
+        <H2 className="text-2xl font-light text-center md:text-left text-muted-foreground">
           Over 100.000 food trucks around the world.
         </H2>
-        <Link href="/app" className="self-start mt-8">
+        <Link href="/app" className="mx-auto md:mx-0 mt-8 md:mt-2">
           <Button>Check the App</Button>
         </Link>
       </div>
-      <div className="w-[400px] aspect-video relative">
+      <div className="w-full max-w-[400px] mt-10 md:mt-0 aspect-video relative">
         <div className="absolute top-0 left-0 w-full h-full z-2"></div>
         <Image
           src="landing-illustration.svg"
