@@ -24,10 +24,13 @@
   @apply absolute right-17;
 }
 
+.leaflet-control-zoom {
+  @apply border-none! pt-4! flex flex-col gap-1;
+}
+
 .leaflet-control-zoom-in,
 .leaflet-control-zoom-out {
-  @apply dark:bg-neutral-900!;
-  @apply dark:text-gray-300;
+  @apply dark:bg-neutral-900!  dark:text-neutral-400! rounded-md! border-none!;
 }
 
 @theme inline {
