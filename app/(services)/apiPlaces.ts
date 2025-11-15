@@ -1,3 +1,4 @@
+import { AddTruckType } from "../(lib)/(actions)/addTruck";
 import { supabase } from "./supabase";
 
 export async function fetchPlaces() {
@@ -12,4 +13,10 @@ export async function fetchReviews() {
 
   if (error) throw error;
   return data;
+}
+
+export async function addPlace(data: AddTruckType) {
+  const { error } = await supabase.from("places").insert(data);
+
+  if (error) throw error;
 }
