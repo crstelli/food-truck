@@ -27,17 +27,9 @@ function Sidebar() {
 
   return (
     <aside className="grid grid-cols-[auto_1fr] absolute top-0 left-0 h-screen z-401 w-160">
-      {menu && (
-        <button
-          onClick={closeMenu}
-          className="aspect-1/2 w-7 bg-background absolute flex rounded-r-xl cursor-pointer items-center justify-center top-13 right-0 translate-x-full z-1001"
-        >
-          <ChevronLeft />
-        </button>
-      )}
       <nav
-        className={`relative bg-secondary px-4 py-15 items-start grid grid-rows-[1fr_3fr] ${
-          menu && "min-w-50"
+        className={`relative bg-secondary py-15 transition-[width] duration-300 ease-in-out items-start justify-items-center grid grid-rows-[1fr_3fr] ${
+          menu ? "w-50" : "w-15"
         }`}
       >
         <Link
@@ -63,19 +55,28 @@ function Sidebar() {
             Info
           </Item>
         </ul>
-        <li className="mt-auto list-none size-8 overflow-hidden rounded-md flex items-center justify-center">
+        <li className="mt-auto list-none size-8 flex items-center justify-center">
           <ThemeButton />
         </li>
       </nav>
-      {menu && (
-        <div className="px-4 py-15 overflow-auto flex flex-col min-w-110 bg-white dark:bg-gray-900">
-          {menu === "search" && <Search />}
-          {menu === "bookmarks" && <Bookmarks />}
-          {menu === "add" && <Add />}
-          {menu === "settings" && <Settings />}
-          {menu === "info" && <Info />}
-        </div>
-      )}
+
+      <div
+        className={`py-15 overflow-y-auto flex flex-col relative transition-[width] duration-300 ease-in-out bg-white dark:bg-gray-900 ${
+          menu ? "w-110 px-4" : "w-0 px-0"
+        }`}
+      >
+        <button
+          onClick={closeMenu}
+          className="aspect-1/2 w-7 bg-muted absolute rounded-l-xl cursor-pointer items-center justify-center top-12 right-0 z-1001"
+        >
+          <ChevronLeft />
+        </button>
+        {menu === "search" && <Search />}
+        {menu === "bookmarks" && <Bookmarks />}
+        {menu === "add" && <Add />}
+        {menu === "settings" && <Settings />}
+        {menu === "info" && <Info />}
+      </div>
     </aside>
   );
 }
