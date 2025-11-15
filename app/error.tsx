@@ -1,5 +1,6 @@
 "use client";
 
+import { H1 } from "@/components/custom/typography";
 import { Button } from "@/components/ui/button";
 
 interface Props {
@@ -10,10 +11,8 @@ interface Props {
 export default function error({ error, reset }: Props) {
   return (
     <div className="m-auto flex flex-col items-center gap-10">
-      <h1 className="text-6xl text-orange-500 font-bold">
-        Something went wrong!
-      </h1>
-      <h2 className="bg-orange-100 text-xl px-4 py-2 rounded-md text-gray-800">
+      <H1 className="text-6xl text-primary font-bold">Something went wrong!</H1>
+      <h2 className="bg-muted text-xl px-4 py-2 rounded-md text-muted-foreground">
         {error.message}
       </h2>
       <Button onClick={reset}>Reload</Button>
