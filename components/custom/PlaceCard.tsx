@@ -8,6 +8,7 @@ import { useMapContext } from "@/app/(pages)/app/(components)/MapContext";
 import { PLACE_FOCUS_ZOOM } from "@/app/(lib)/constants";
 import { Card, CardContent, CardFooter, CardHeader } from "../ui/card";
 import { H2, P } from "./typography";
+import { BookmarkButton } from "./BookmarkButton";
 
 interface Props {
   place: Place;
@@ -33,14 +34,15 @@ function PlaceCard({ place }: Props) {
         </P>
       </CardContent>
 
-      <CardFooter className="mt-2 flex justify-between">
+      <CardFooter className="mt-2 flex gap-2">
         <Button
           onClick={() => mapRef.current.flyTo(place.location, PLACE_FOCUS_ZOOM)}
         >
           <MapPin className="w-4 h-4" />
           Locate
         </Button>
-        <span className="text-muted-foreground">
+        <BookmarkButton placeId={place.id} />
+        <span className="text-muted-foreground ml-auto">
           {place.reviews.length} reviews
         </span>
       </CardFooter>

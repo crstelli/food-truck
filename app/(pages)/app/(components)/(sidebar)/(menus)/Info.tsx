@@ -3,10 +3,11 @@ import { useSidebarContext } from "../useSidebarContext";
 
 import { Button } from "@/components/ui/button";
 import { getAffordabilityColor } from "@/app/(lib)/getAffordabilityColor";
-import { Bookmark, Map, StarIcon } from "lucide-react";
+import { Map, StarIcon } from "lucide-react";
 import { H1, H2 } from "@/components/custom/typography";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Star } from "@/components/custom/Star";
+import { BookmarkButton } from "@/components/custom/BookmarkButton";
 
 function Info() {
   const searchParams = useSearchParams();
@@ -58,9 +59,7 @@ function Info() {
                   Directions
                 </Button>
               </a>
-              <Button variant="secondary">
-                <Bookmark />
-              </Button>
+              <BookmarkButton placeId={place.id} />
             </div>
           </div>
         </CardContent>
