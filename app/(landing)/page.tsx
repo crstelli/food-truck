@@ -13,7 +13,7 @@ export default function page() {
   return (
     <main className="w-[95%] max-w-[1200px] mx-auto flex flex-col md:flex-row items-center sm:justify-between my-auto">
       <div className="flex flex-col gap-3">
-        <H1 className="text-2xl mt-15 md:mt-0 text-nowrap sm:text-4xl text-center md:text-left font-bold">
+        <H1 className="text-2xl mt-15 md:mt-0 text-nowrap sm:text-4xl text-center md:text-left lg:text-6xl font-bold">
           Your favorites trucks
           <br />
           In one place
@@ -22,7 +22,7 @@ export default function page() {
           Over 100.000 food trucks around the world.
         </H2>
         <Link href="/app" className="mx-auto md:mx-0 mt-8 md:mt-2">
-          <Button>Check the App</Button>
+          <Button className="font-bold text-lg">Check the App</Button>
         </Link>
       </div>
       <div className="w-full max-w-[400px] mt-10 md:mt-0 aspect-video relative">

@@ -3,6 +3,7 @@
 import type { Affordability } from "../(types)/Affordability";
 import type { LatLngTuple } from "leaflet";
 import { addPlace } from "@/app/(services)/apiPlaces";
+import { revalidatePath } from "next/cache";
 
 export interface AddTruckType {
   name: string;
@@ -11,5 +12,6 @@ export interface AddTruckType {
 }
 
 export async function addItem(data: AddTruckType) {
-  addPlace(data);
+  await addPlace(data);
+  revalidatePath("/app");
 }

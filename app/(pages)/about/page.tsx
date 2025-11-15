@@ -11,7 +11,7 @@ export default function page() {
   return (
     <div className="flex flex-col p-10">
       <Navbar />
-      <main className="w-[90%] max-w-[1200px] text-center items-center gap-x-20 mx-auto flex flex-col lg:grid lg:grid-cols-2 gap-y-15 py-10 lg:py-20">
+      <main className="w-[90%] max-lg:max-w-[500px] max-w-[1200px] text-center items-center lg:gap-y-15 gap-x-20 mx-auto flex flex-col lg:grid lg:grid-cols-2 gap-y-5 py-10 lg:py-20">
         <H1 className="lg:text-left text-4xl lg:text-5xl col-span-2 font-bold first-letter:text-primary">
           About
         </H1>

@@ -37,6 +37,18 @@
   @apply dark:bg-neutral-900! dark:text-neutral-400! rounded-md! border-none!;
 }
 
+*::-webkit-scrollbar {
+  @apply w-3;
+}
+
+*::-webkit-scrollbar-track {
+  @apply rounded-full bg-background;
+}
+
+*::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-muted;
+}
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
 

@@ -7,12 +7,13 @@ import { Info, MapPin } from "lucide-react";
 import { useMapContext } from "@/app/(pages)/app/(components)/MapContext";
 import { PLACE_FOCUS_ZOOM } from "@/app/(lib)/constants";
 import { Card, CardContent, CardFooter, CardHeader } from "../ui/card";
-import { H2, P } from "./typography";
+import { H2 } from "./typography";
 import { BookmarkButton } from "./BookmarkButton";
 import { ButtonGroup } from "../ui/button-group";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { useSidebarContext } from "@/app/(pages)/app/(components)/(sidebar)/useSidebarContext";
+import { getAffordabilityColor } from "@/app/(lib)/getAffordabilityColor";
 
 interface Props {
   place: Place;
@@ -40,24 +41,27 @@ function PlaceCard({ place }: Props) {
     <Card className="w-full mx-auto gap-2 py-4">
       <CardHeader className="flex justify-between">
         <H2>{place.name}</H2>
-        <span className="flex gap-2 items-center font-bold">
-          {place.rating_value}
-          <Star />
-        </span>
+        {place.reviews.length > 0 && (
+          <span className="flex gap-2 items-center font-bold">
+            {place.rating_value}
+            <Star />
+          </span>
+        )}{" "}
       </CardHeader>
 
       <CardContent>
-        <P>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil veniam
-          iste amet dolor.
-        </P>
+        <span className={getAffordabilityColor(place.affordability)}>
+          {place.affordability}
+        </span>
       </CardContent>
 
-      <CardFooter className="mt-2 flex gap-2">
+      <CardFooter className="mt-2 flex gap-4">
         <Button
           onClick={() => {
-            mapRef.current.flyTo(place.location, PLACE_FOCUS_ZOOM);
-            closeMenu();
+            if (mapRef?.current) {
+              mapRef.current.flyTo(place.location, PLACE_FOCUS_ZOOM);
+              closeMenu();
+            }
           }}
         >
           <MapPin className="w-4 h-4" />

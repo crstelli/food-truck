@@ -4,7 +4,7 @@ import { useSidebarContext } from "../useSidebarContext";
 import { Button } from "@/components/ui/button";
 import { getAffordabilityColor } from "@/app/(lib)/getAffordabilityColor";
 import { Map, StarIcon } from "lucide-react";
-import { H1, H2 } from "@/components/custom/typography";
+import { H1, H2, H3 } from "@/components/custom/typography";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Star } from "@/components/custom/Star";
 import { BookmarkButton } from "@/components/custom/BookmarkButton";
@@ -50,7 +50,7 @@ function Info() {
             </span>
           </div>
           <div>
-            <h2 className="font-bold">Actions</h2>
+            <h2 className="font-bold mb-1">Actions</h2>
 
             <div className="flex gap-1">
               <a
@@ -69,28 +69,34 @@ function Info() {
         </CardContent>
       </Card>
 
-      <H2 className="mt-10 text-center">Last Reviews</H2>
-      <div className="flex flex-col gap-2 mt-1">
-        {place.reviews.slice(0, 3).map((rev) => (
-          <div
-            key={rev.id}
-            className="grid grid-cols-2 p-4 border border-border rounded-md"
-          >
-            <h3 className="font-bold">{rev.user}</h3>
-            <span className="flex items-center gap-1 justify-self-end">
-              {[...Array(rev.rating)].map((_, i) => (
-                <Star key={i} />
-              ))}
-              {[...Array(5 - rev.rating)].map((_, i) => (
-                <StarIcon key={i} />
-              ))}
-            </span>
-            <span className="col-span-2 mt-4 text-muted-foreground">
-              {rev.content}
-            </span>
+      {place.reviews.length > 0 ? (
+        <>
+          <H2 className="mt-10 text-center">Last Reviews</H2>
+          <div className="flex flex-col gap-2 mt-2">
+            {place.reviews.slice(0, 3).map((rev) => (
+              <div
+                key={rev.id}
+                className="grid grid-cols-2 p-4 border border-border rounded-md"
+              >
+                <h3 className="font-bold">{rev.user}</h3>
+                <span className="flex items-center gap-1 justify-self-end">
+                  {[...Array(rev.rating)].map((_, i) => (
+                    <Star key={i} />
+                  ))}
+                  {[...Array(5 - rev.rating)].map((_, i) => (
+                    <StarIcon key={i} />
+                  ))}
+                </span>
+                <span className="col-span-2 mt-4 text-muted-foreground">
+                  {rev.content}
+                </span>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </>
+      ) : (
+        <H3 className="text-center mt-6">No recent reviews for this Truck</H3>
+      )}
     </>
   );
 }

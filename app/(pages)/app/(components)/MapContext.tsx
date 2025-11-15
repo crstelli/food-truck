@@ -1,9 +1,13 @@
 "use client";
 
-import { createContext, useContext, useRef } from "react";
+import { createContext, RefObject, useContext, useRef } from "react";
 import type { Map } from "leaflet";
 
-const MapContext = createContext(null);
+interface ContextType {
+  mapRef: RefObject<Map | null>;
+}
+
+const MapContext = createContext<ContextType | null>(null);
 
 interface Props {
   children: React.ReactNode;

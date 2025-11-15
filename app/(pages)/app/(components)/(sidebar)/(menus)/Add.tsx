@@ -11,7 +11,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { H1, H2 } from "@/components/custom/typography";
+import { H1, H2, H3 } from "@/components/custom/typography";
 
 import { addItem, AddTruckType } from "@/app/(lib)/(actions)/addTruck";
 import { Controller, FieldValues, useForm } from "react-hook-form";
@@ -73,18 +73,18 @@ function Add() {
           )}
         />
 
+        <H3 className="mt-4">Location</H3>
         <Input
           {...register("latitude")}
           placeholder="Latitude"
-          className="mt-4"
-          defaultValue={position[0]}
+          value={position[0]}
           type="number"
           disabled
         />
         <Input
           {...register("longitude")}
           placeholder="Longitude"
-          defaultValue={position[1]}
+          value={position[1]}
           type="number"
           disabled
         />
