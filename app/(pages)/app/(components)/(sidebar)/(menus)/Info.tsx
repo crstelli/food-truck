@@ -4,6 +4,7 @@ import { useSidebarContext } from "../useSidebarContext";
 import { Button } from "@/components/ui/button";
 import { getAffordabilityColor } from "@/app/(lib)/getAffordabilityColor";
 import { Star } from "lucide-react";
+import { H2 } from "@/components/custom/typography";
 
 function Info() {
   const searchParams = useSearchParams();
@@ -11,7 +12,8 @@ function Info() {
     (place) => place.id === +(searchParams.get("place_id") || 0)
   );
 
-  if (!place) return <p>No Place</p>;
+  if (!place)
+    return <H2 className="text-center">Click on a Truck to show info</H2>;
 
   return (
     <>

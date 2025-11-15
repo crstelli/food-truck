@@ -11,12 +11,13 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { H1 } from "@/components/custom/typography";
+import { H1, H2 } from "@/components/custom/typography";
 
 function Add() {
   const { position } = useSidebarContext();
 
-  if (position.length === 0) return <H1>Click on the map to add a place</H1>;
+  if (position.length === 0)
+    return <H2 className="text-center">Click on the map to add a Truck</H2>;
 
   return (
     <>
