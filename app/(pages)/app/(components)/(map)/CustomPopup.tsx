@@ -40,6 +40,8 @@ function CustomPopup({ onClose, place }: Props) {
     removeBookmark(place.id);
   }
 
+  console.log(place);
+
   return (
     <Popup
       eventHandlers={{ remove: onClose }}

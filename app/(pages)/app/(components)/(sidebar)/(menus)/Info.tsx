@@ -19,9 +19,10 @@ function Info() {
 
   return (
     <>
-      <Card className="flex flex-col">
+      <H1>Info</H1>
+      <Card className="flex flex-col mt-4">
         <CardHeader>
-          <H1>{place.name}</H1>
+          <H2 className="text-center">{place.name}</H2>
         </CardHeader>
         <CardContent className="grid grid-cols-2 gap-4 items-center">
           <div>
@@ -66,7 +67,7 @@ function Info() {
       </Card>
 
       <H2 className="mt-10 text-center">Last Reviews</H2>
-      <div className="flex flex-col gap-2 overflow-auto mt-1">
+      <div className="flex flex-col gap-2 mt-1">
         {place.reviews.splice(0, 3).map((rev) => (
           <div
             key={rev.id}
