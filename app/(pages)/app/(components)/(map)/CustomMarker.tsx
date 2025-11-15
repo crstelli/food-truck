@@ -24,7 +24,7 @@ function CustomMarker({ place }: Props) {
   const searchParams = useSearchParams();
 
   const pathname = usePathname();
-  const { setMenu, closeMenu } = useSidebarContext();
+  const { closeMenu } = useSidebarContext();
   const { replace } = useRouter();
 
   function handleOpen(e: LeafletMouseEvent) {
@@ -34,7 +34,6 @@ function CustomMarker({ place }: Props) {
     replace(`${pathname}?${params.toString()}`);
 
     map.flyTo(e.latlng, PLACE_FOCUS_ZOOM);
-    setMenu("info");
   }
 
   function handleClose() {

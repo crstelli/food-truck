@@ -16,6 +16,7 @@ import {
 import { ButtonGroup } from "@/components/ui/button-group";
 import { Separator } from "@/components/ui/separator";
 import { BookmarkButton } from "@/components/custom/BookmarkButton";
+import { useSidebarContext } from "../(sidebar)/useSidebarContext";
 
 interface Props {
   onClose: () => void;
@@ -23,6 +24,8 @@ interface Props {
 }
 
 function CustomPopup({ onClose, place }: Props) {
+  const { setMenu } = useSidebarContext();
+
   return (
     <Popup
       eventHandlers={{ remove: onClose }}
@@ -63,7 +66,7 @@ function CustomPopup({ onClose, place }: Props) {
             </Button>
           </a>
           <ButtonGroup>
-            <Button variant="secondary">
+            <Button onClick={() => setMenu("info")} variant="secondary">
               <Info />
             </Button>
             <BookmarkButton placeId={place.id} />
