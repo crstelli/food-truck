@@ -8,6 +8,7 @@ import { H1, H2 } from "@/components/custom/typography";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Star } from "@/components/custom/Star";
 import { BookmarkButton } from "@/components/custom/BookmarkButton";
+import { Truck3D } from "@/components/custom/truck/Truck3D";
 
 function Info() {
   const searchParams = useSearchParams();
@@ -21,6 +22,9 @@ function Info() {
   return (
     <>
       <H1>Info</H1>
+      <div className="w-full">
+        <Truck3D />
+      </div>
       <Card className="flex flex-col mt-4">
         <CardHeader>
           <H2 className="text-center">{place.name}</H2>
