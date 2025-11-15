@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { SidebarContext } from "./(sidebar)/useSidebarContext";
 
 import type { LatLngTuple } from "leaflet";
@@ -17,7 +17,13 @@ interface Props {
 function ContextProvider({ children, places }: Props) {
   const [menu, setMenu] = useState<SidebarMenu>("");
   const [position, setPosition] = useState<LatLngTuple | []>([]);
-  const [bookmarks, setBookmarks] = useState<Bookmark[] | []>([]);
+  const [bookmarks, setBookmarks] = useState<Bookmark[] | []>(() => {
+    if (typeof window !== "undefined") {
+      const storage = localStorage.getItem("bookmarks");
+      if (storage) return JSON.parse(storage);
+    }
+    return [];
+  });
 
   const { replace } = useRouter();
   const pathname = usePathname();
@@ -38,6 +44,10 @@ function ContextProvider({ children, places }: Props) {
   function isBookmarked(id: number) {
     return bookmarks.some((bookmark) => bookmark.id === id);
   }
+
+  useEffect(() => {
+    localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
+  }, [bookmarks]);
 
   return (
     <SidebarContext.Provider
