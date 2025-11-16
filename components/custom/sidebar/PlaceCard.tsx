@@ -65,7 +65,7 @@ function PlaceCard({ place }: Props) {
           }}
         >
           <MapPin className="w-4 h-4" />
-          Locate
+          <span className="max-[420px]:hidden">Locate</span>
         </Button>
         <ButtonGroup>
           <Button onClick={handleOpen} variant="secondary" size="icon">
@@ -73,7 +73,7 @@ function PlaceCard({ place }: Props) {
           </Button>
           <BookmarkButton placeId={place.id} />
         </ButtonGroup>
-        <span className="text-muted-foreground ml-auto">
+        <span className="text-muted-foreground text-center ml-auto">
           {place.reviews.length} reviews
         </span>
       </CardFooter>

@@ -37,7 +37,11 @@ function Sidebar() {
         >
           <Image src={"/logo.svg"} alt="Logo of the App" fill />
         </Link>
-        <ul className={`flex flex-col gap-8 ${menu ? "ml-10" : "mx-auto"}`}>
+        <ul
+          className={`flex flex-col gap-8 ${
+            menu ? "max-md:items-center md:ml-10" : "mx-auto"
+          }`}
+        >
           <Item icon={SearchIcon} opens="search">
             Search
           </Item>

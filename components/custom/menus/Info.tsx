@@ -61,7 +61,7 @@ function Info() {
               >
                 <Button className="self-center">
                   <Map />
-                  Directions
+                  <span className="max-[420px]:hidden">Directions</span>
                 </Button>
               </a>
               <BookmarkButton placeId={place.id} />
