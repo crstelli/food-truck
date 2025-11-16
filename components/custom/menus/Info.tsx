@@ -1,5 +1,5 @@
 import { useSearchParams } from "next/navigation";
-import { useSidebarContext } from "@/app/app/(sidebar)/useSidebarContext";
+import { useSidebarContext } from "../ContextProvider";
 
 import { Button } from "@/components/ui/button";
 import { getAffordabilityColor } from "@/app/(lib)/getAffordabilityColor";

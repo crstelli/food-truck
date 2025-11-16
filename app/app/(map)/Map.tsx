@@ -1,6 +1,6 @@
 import { MapContainer, TileLayer } from "react-leaflet";
 import { useTheme } from "next-themes";
-import { useSidebarContext } from "../(sidebar)/useSidebarContext";
+import { useSidebarContext } from "@/components/custom/ContextProvider";
 
 import { CustomMarker } from "./CustomMarker";
 import { ClickHandler } from "./ClickHandler";

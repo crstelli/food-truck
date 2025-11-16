@@ -1,6 +1,6 @@
 "use client";
 
-import { useSidebarContext } from "./useSidebarContext";
+import { useSidebarContext } from "../ContextProvider";
 import { SidebarMenu } from "@/app/(lib)/(types)/SidebarMenu";
 
 import type { LucideIcon } from "lucide-react";

@@ -12,7 +12,7 @@ import { BookmarkButton } from "../BookmarkButton";
 import { ButtonGroup } from "../../ui/button-group";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
-import { useSidebarContext } from "@/app/app/(sidebar)/useSidebarContext";
+import { useSidebarContext } from "../ContextProvider";
 import { getAffordabilityColor } from "@/app/(lib)/getAffordabilityColor";
 
 interface Props {

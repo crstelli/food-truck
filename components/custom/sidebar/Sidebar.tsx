@@ -3,11 +3,8 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import {
-  SidebarContext,
-  useSidebarContext,
-} from "../../../app/app/(sidebar)/useSidebarContext";
-import { Item } from "../../../app/app/(sidebar)/Item";
+import { useSidebarContext } from "../ContextProvider";
+import { Item } from "./Item";
 
 import { Search } from "../menus/Search";
 import { Bookmarks } from "../menus/Bookmarks";
@@ -80,4 +77,4 @@ function Sidebar() {
   );
 }
 
-export { Sidebar, SidebarContext };
+export { Sidebar };

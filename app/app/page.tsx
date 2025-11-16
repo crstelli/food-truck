@@ -6,7 +6,7 @@ import { fetchPlaces, fetchReviews } from "@/app/(services)/apiPlaces";
 
 import { Sidebar } from "@/components/custom/sidebar/Sidebar";
 import { Map } from "./(map)";
-import { ContextProvider } from "../../components/custom/ContextProvider";
+import { SidebarProvider } from "@/components/custom/ContextProvider";
 import { MapProvider } from "../../components/custom/MapContext";
 
 interface MetadataProps {
@@ -34,14 +34,14 @@ export default async function page() {
 
   return (
     <div className="max-w-screen h-screen relative flex">
-      <ContextProvider places={places}>
+      <SidebarProvider places={places}>
         <MapProvider>
           <Sidebar />
           <main className="w-full h-full flex items-center justify-center">
             <Map />
           </main>
         </MapProvider>
-      </ContextProvider>
+      </SidebarProvider>
     </div>
   );
 }

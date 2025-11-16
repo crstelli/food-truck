@@ -1,7 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { SidebarContext } from "./sidebar/Sidebar";
+import {
+  createContext,
+  Dispatch,
+  SetStateAction,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 
 import type { LatLngTuple } from "leaflet";
 import type { SidebarMenu } from "@/app/(lib)/(types)/SidebarMenu";
@@ -14,7 +20,25 @@ interface Props {
   places: Place[];
 }
 
-function ContextProvider({ children, places }: Props) {
+interface SidebarContextType {
+  menu: SidebarMenu;
+  setMenu: Dispatch<SetStateAction<SidebarMenu>>;
+  closeMenu: () => void;
+
+  position: LatLngTuple | [];
+  setPosition: Dispatch<SetStateAction<LatLngTuple | []>>;
+
+  bookmarks: Bookmark[] | [];
+  addBookmark: (bookmark: Bookmark) => void;
+  removeBookmark: (id: number) => void;
+  isBookmarked: (id: number) => boolean;
+
+  places: Place[];
+}
+
+const SidebarContext = createContext<SidebarContextType | undefined>(undefined);
+
+function SidebarProvider({ children, places }: Props) {
   const [menu, setMenu] = useState<SidebarMenu>("");
   const [position, setPosition] = useState<LatLngTuple | []>([]);
   const [bookmarks, setBookmarks] = useState<Bookmark[] | []>(() => {
@@ -69,4 +93,12 @@ function ContextProvider({ children, places }: Props) {
   );
 }
 
-export { ContextProvider };
+function useSidebarContext() {
+  const context = useContext(SidebarContext);
+  if (!context)
+    throw new Error("SidebarContext is not accessible outside his provider.");
+
+  return context;
+}
+
+export { SidebarProvider, useSidebarContext };
