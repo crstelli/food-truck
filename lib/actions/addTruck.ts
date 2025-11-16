@@ -5,6 +5,8 @@ import type { LatLngTuple } from "leaflet";
 import { addPlace } from "@/services/apiPlaces";
 import { revalidatePath } from "next/cache";
 
+import { DEV_MODE } from "../constants";
+
 export interface AddTruckType {
   name: string;
   affordability: Affordability;
@@ -12,6 +14,15 @@ export interface AddTruckType {
 }
 
 export async function addItem(data: AddTruckType) {
-  await addPlace(data);
-  revalidatePath("/app");
+  if (DEV_MODE)
+    return {
+      ok: false,
+      message: "Dev mode enabled, you cannot add new Trucks.",
+    };
+  else {
+    await addPlace(data);
+    revalidatePath("/app");
+
+    return { ok: true, message: "ok" };
+  }
 }

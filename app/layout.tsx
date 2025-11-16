@@ -4,6 +4,8 @@ import "leaflet/dist/leaflet.css";
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/custom/theme/ThemeProvider";
 
+import { Toaster } from "react-hot-toast";
+
 import { Nunito } from "next/font/google";
 const nunito = Nunito({ subsets: ["latin"] });
 
@@ -24,6 +26,7 @@ export default function RootLayout({ children }: Props) {
       <body
         className={`${nunito.className} max-w-screen min-h-screen flex flex-col selection:bg-orange-500 selection:text-orange-50`}
       >
+        <Toaster />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
         </ThemeProvider>

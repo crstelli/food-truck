@@ -15,13 +15,14 @@ import { H1, H2, H3 } from "@/components/ui/typography";
 
 import { addItem, AddTruckType } from "@/lib/actions/addTruck";
 import { Controller, FieldValues, useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 
 function Add() {
   const { position } = useSidebarContext();
   const { register, handleSubmit, control, reset } = useForm();
   const { closeMenu } = useSidebarContext();
 
-  function submitForm(data: FieldValues) {
+  async function submitForm(data: FieldValues) {
     const newData: AddTruckType = {
       name: data.name,
       affordability: data.affordability,
@@ -29,7 +30,13 @@ function Add() {
       location: [+data.latitude, +data.longitude],
     };
 
-    addItem(newData);
+    const response = await addItem(newData);
+
+    if (response.ok) {
+      toast.success("Truck addedd successfully.");
+    } else {
+      toast.error(response.message);
+    }
 
     reset();
     closeMenu();
