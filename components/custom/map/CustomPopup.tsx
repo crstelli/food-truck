@@ -1,10 +1,10 @@
 import { Popup } from "react-leaflet";
 
-import type { Place } from "@/app/(lib)/(types)/Place";
+import type { Place } from "@/lib/(types)/Place";
 import { Star } from "@/components/custom/Star";
 
 import { Button } from "@/components/ui/button";
-import { getAffordabilityColor } from "@/app/(lib)/getAffordabilityColor";
+import { getAffordabilityColor } from "@/lib/getAffordabilityColor";
 
 import { Info, Map } from "lucide-react";
 import {

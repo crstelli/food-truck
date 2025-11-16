@@ -1,11 +1,11 @@
-import type { SearchParams } from "@/app/(lib)/(types)/SearchParams";
-import type { Place } from "@/app/(lib)/(types)/Place";
-import type { Review } from "@/app/(lib)/(types)/Review";
+import type { SearchParams } from "@/lib/(types)/SearchParams";
+import type { Place } from "@/lib/(types)/Place";
+import type { Review } from "@/lib/(types)/Review";
 
-import { fetchPlaces, fetchReviews } from "@/app/(services)/apiPlaces";
+import { fetchPlaces, fetchReviews } from "@/services/apiPlaces";
 
 import { Sidebar } from "@/components/custom/sidebar/Sidebar";
-import { Map } from "./(map)";
+import { Map } from "../../components/custom/map";
 import { SidebarProvider } from "@/components/custom/ContextProvider";
 import { MapProvider } from "../../components/custom/MapContext";
 

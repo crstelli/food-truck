@@ -2,7 +2,7 @@
 
 import type { Affordability } from "../(types)/Affordability";
 import type { LatLngTuple } from "leaflet";
-import { addPlace } from "@/app/(services)/apiPlaces";
+import { addPlace } from "@/services/apiPlaces";
 import { revalidatePath } from "next/cache";
 
 export interface AddTruckType {

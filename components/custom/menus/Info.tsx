@@ -2,7 +2,7 @@ import { useSearchParams } from "next/navigation";
 import { useSidebarContext } from "../ContextProvider";
 
 import { Button } from "@/components/ui/button";
-import { getAffordabilityColor } from "@/app/(lib)/getAffordabilityColor";
+import { getAffordabilityColor } from "@/lib/getAffordabilityColor";
 import { Map, StarIcon } from "lucide-react";
 import { H1, H2, H3 } from "@/components/ui/typography";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";

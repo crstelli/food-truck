@@ -1,11 +1,11 @@
-import { Place } from "@/app/(lib)/(types)/Place";
+import { Place } from "@/lib/(types)/Place";
 import { Button } from "@/components/ui/button";
 
 import { Star } from "@/components/custom/Star";
 
 import { Info, MapPin } from "lucide-react";
 import { useMapContext } from "@/components/custom/MapContext";
-import { PLACE_FOCUS_ZOOM } from "@/app/(lib)/constants";
+import { PLACE_FOCUS_ZOOM } from "@/lib/constants";
 import { Card, CardContent, CardFooter, CardHeader } from "../../ui/card";
 import { H2 } from "../../ui/typography";
 import { BookmarkButton } from "../BookmarkButton";
@@ -13,7 +13,7 @@ import { ButtonGroup } from "../../ui/button-group";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { useSidebarContext } from "../ContextProvider";
-import { getAffordabilityColor } from "@/app/(lib)/getAffordabilityColor";
+import { getAffordabilityColor } from "@/lib/getAffordabilityColor";
 
 interface Props {
   place: Place;
