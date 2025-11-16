@@ -1,7 +1,7 @@
 "use client";
 
 import { useMapEvents } from "react-leaflet";
-import { useSidebarContext } from "@/components/custom/ContextProvider";
+import { useSidebarContext } from "@/components/custom/sidebar/SidebarProvider";
 
 import type { LatLngTuple, LeafletMouseEvent } from "leaflet";
 

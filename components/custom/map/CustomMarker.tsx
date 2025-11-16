@@ -9,7 +9,7 @@ import { PLACE_FOCUS_ZOOM } from "@/lib/constants";
 import { markerIconLight, markerIconDark } from "@/lib/markerIcon";
 
 import { CustomPopup } from "./CustomPopup";
-import { useSidebarContext } from "@/components/custom/ContextProvider";
+import { useSidebarContext } from "@/components/custom/sidebar/SidebarProvider";
 import { useTheme } from "next-themes";
 
 interface Props {

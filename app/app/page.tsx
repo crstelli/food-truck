@@ -6,8 +6,8 @@ import { fetchPlaces, fetchReviews } from "@/services/apiPlaces";
 
 import { Sidebar } from "@/components/custom/sidebar/Sidebar";
 import { Map } from "../../components/custom/map";
-import { SidebarProvider } from "@/components/custom/ContextProvider";
-import { MapProvider } from "../../components/custom/MapContext";
+import { SidebarProvider } from "@/components/custom/sidebar/SidebarProvider";
+import { MapProvider } from "../../components/custom/map/MapContext";
 
 interface MetadataProps {
   searchParams: SearchParams;

@@ -16,7 +16,7 @@ import {
 import { ButtonGroup } from "@/components/ui/button-group";
 import { Separator } from "@/components/ui/separator";
 import { BookmarkButton } from "@/components/custom/BookmarkButton";
-import { useSidebarContext } from "@/components/custom/ContextProvider";
+import { useSidebarContext } from "@/components/custom/sidebar/SidebarProvider";
 
 interface Props {
   onClose: () => void;

@@ -1,12 +1,12 @@
 import { MapContainer, TileLayer } from "react-leaflet";
 import { useTheme } from "next-themes";
-import { useSidebarContext } from "@/components/custom/ContextProvider";
+import { useSidebarContext } from "@/components/custom/sidebar/SidebarProvider";
 
 import { CustomMarker } from "./CustomMarker";
 import { ClickHandler } from "./ClickHandler";
 
 import { MAP_DEFAULT_ZOOM, MAP_DEFAULT_POSITION } from "@/lib/constants";
-import { useMapContext } from "@/components/custom/MapContext";
+import { useMapContext } from "@/components/custom/map/MapContext";
 
 export default function Map() {
   const { places } = useSidebarContext();

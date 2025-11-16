@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import { useSidebarContext } from "../ContextProvider";
+import { useSidebarContext } from "./SidebarProvider";
 import { Item } from "./Item";
 
 import { Search } from "../menus/Search";
