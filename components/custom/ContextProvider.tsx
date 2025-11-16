@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { SidebarContext } from "./(sidebar)/useSidebarContext";
+import { SidebarContext } from "./Sidebar";
 
 import type { LatLngTuple } from "leaflet";
 import type { SidebarMenu } from "@/app/(lib)/(types)/SidebarMenu";

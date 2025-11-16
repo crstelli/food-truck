@@ -1,7 +1,7 @@
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
-import { useSidebarContext } from "../useSidebarContext";
+import { useSidebarContext } from "@/app/app/(sidebar)/useSidebarContext";
 import {
   Select,
   SelectContent,

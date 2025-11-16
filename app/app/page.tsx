@@ -4,10 +4,10 @@ import type { Review } from "@/app/(lib)/(types)/Review";
 
 import { fetchPlaces, fetchReviews } from "@/app/(services)/apiPlaces";
 
-import { Sidebar } from "./(components)/(sidebar)/Sidebar";
-import { Map } from "./(components)/(map)/index";
-import { ContextProvider } from "./(components)/ContextProvider";
-import { MapProvider } from "./(components)/MapContext";
+import { Sidebar } from "@/components/custom/Sidebar";
+import { Map } from "./(map)";
+import { ContextProvider } from "../../components/custom/ContextProvider";
+import { MapProvider } from "../../components/custom/MapContext";
 
 interface MetadataProps {
   searchParams: SearchParams;

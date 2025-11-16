@@ -1,5 +1,5 @@
 import { useSearchParams } from "next/navigation";
-import { useSidebarContext } from "../useSidebarContext";
+import { useSidebarContext } from "@/app/app/(sidebar)/useSidebarContext";
 
 import { Button } from "@/components/ui/button";
 import { getAffordabilityColor } from "@/app/(lib)/getAffordabilityColor";
@@ -8,7 +8,7 @@ import { H1, H2, H3 } from "@/components/custom/typography";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Star } from "@/components/custom/Star";
 import { BookmarkButton } from "@/components/custom/BookmarkButton";
-import { Truck3D } from "@/components/custom/truck/Truck3D";
+import { Truck3D } from "@/components/custom/Truck3D";
 
 function Info() {
   const searchParams = useSearchParams();

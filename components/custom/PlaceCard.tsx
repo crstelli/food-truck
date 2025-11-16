@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Star } from "@/components/custom/Star";
 
 import { Info, MapPin } from "lucide-react";
-import { useMapContext } from "@/app/(pages)/app/(components)/MapContext";
+import { useMapContext } from "@/components/custom/MapContext";
 import { PLACE_FOCUS_ZOOM } from "@/app/(lib)/constants";
 import { Card, CardContent, CardFooter, CardHeader } from "../ui/card";
 import { H2 } from "./typography";
@@ -12,7 +12,7 @@ import { BookmarkButton } from "./BookmarkButton";
 import { ButtonGroup } from "../ui/button-group";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
-import { useSidebarContext } from "@/app/(pages)/app/(components)/(sidebar)/useSidebarContext";
+import { useSidebarContext } from "@/app/app/(sidebar)/useSidebarContext";
 import { getAffordabilityColor } from "@/app/(lib)/getAffordabilityColor";
 
 interface Props {

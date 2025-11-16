@@ -6,7 +6,7 @@ import { CustomMarker } from "./CustomMarker";
 import { ClickHandler } from "./ClickHandler";
 
 import { MAP_DEFAULT_ZOOM, MAP_DEFAULT_POSITION } from "@/app/(lib)/constants";
-import { useMapContext } from "../MapContext";
+import { useMapContext } from "@/components/custom/MapContext";
 
 export default function Map() {
   const { places } = useSidebarContext();

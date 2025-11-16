@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useSidebarContext } from "../useSidebarContext";
+import { useSidebarContext } from "@/app/app/(sidebar)/useSidebarContext";
 
 import { Input } from "@/components/ui/input";
 import { H1 } from "@/components/custom/typography";

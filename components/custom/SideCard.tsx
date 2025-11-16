@@ -2,9 +2,9 @@ import { Place } from "@/app/(lib)/(types)/Place";
 import { Button } from "@/components/ui/button";
 
 import { MapPin, Star } from "lucide-react";
-import { useMapContext } from "../../MapContext";
+import { useMapContext } from "./MapContext";
 import { PLACE_FOCUS_ZOOM } from "@/app/(lib)/constants";
-import { useSidebarContext } from "../useSidebarContext";
+import { useSidebarContext } from "../../app/app/(sidebar)/useSidebarContext";
 
 interface Props {
   place: Place;

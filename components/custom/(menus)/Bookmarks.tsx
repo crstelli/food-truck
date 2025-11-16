@@ -1,5 +1,5 @@
 import { PlaceCard } from "@/components/custom/PlaceCard";
-import { useSidebarContext } from "../useSidebarContext";
+import { useSidebarContext } from "@/app/app/(sidebar)/useSidebarContext";
 
 function Bookmarks() {
   const { bookmarks, places } = useSidebarContext();

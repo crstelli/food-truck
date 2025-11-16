@@ -1,4 +1,4 @@
-import "@/app/(styles)/globals.css";
+import "@/app/globals.css";
 import "leaflet/dist/leaflet.css";
 
 import type { Metadata } from "next";
