@@ -1,36 +1,106 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FoodTruck
 
-## Getting Started
+Web application for tracking food trucks around the world. You can add new trucks, view their location and details through Google Maps integration, and read other user reviews. The interface is fully responsive and includes a native dark mode for a consistent experience across all devices. Designed to be fast, simple, and easy to use.
 
-First, run the development server:
+## Images
+
+!["Landing Page"](./images/landing-light.png)
+!["App"](./images/app-light.png)
+
+### Dark Mode
+
+!["App Dark"](./images/app-dark.png)
+!["About Page"](./images/about.png)
+
+### Responsive Design
+
+!["Home Responsive"](./images/home-responsive.png)
+!["App Responsive"](./images/responsive-1.png)
+!["App Responsive"](./images/responsive-2.png)
+
+## Tech Stack
+
+- React 19.2
+- Next.js 16.0.1
+- TailwindCSS 4.1
+- TypeScript
+- Supabase
+- lucide-react
+- react-hot-toast
+- shadcn/ui
+- react-hook-form
+- leaflet
+- react-leaflet
+- three.js
+
+## Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/crstelli/food-truck
+```
+
+2. Navigate into project folder
+
+```bash
+cd food-truck
+```
+
+3. Install dependencies
+
+```bash
+npm install
+```
+
+4. Disable DevMode in `lib/constants.ts`
+
+5. Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+6. Open your browser and navigate to:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Environment Variables
 
-## Learn More
+You need to configure environment variables for the app to work correctly.
+Create a `.env.local` file in the project root and add:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+NEXT_PUBLIC_SUPABASE_URL = Your Supabase Project URL
+NEXT_PUBLIC_SUPABASE_KEY = Your Supabase Key
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Geolocation with a responsive map
+- Search trucks with a search bar
+- Save favorite trucks in bookmarks
+- Add new trucks (disabled when DevMode is enabled)
+- Dark and Light themes
+- Truck information and reviews of trucks
+- Open truck location in Google Maps
+- Locate a truck on the map
+- Affordability rating
+- Responsive Design
 
-## Deploy on Vercel
+## Future Improvements
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Authentication
+- Adding reviews to trucks
+- Truck owning and page personalization
+- Pricing and menus
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Author
+
+Giuseppe - [LinkedIn](https://linkedin.com/in/crescitelli) - [Portfolio](https://crescitelli.dev)
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
