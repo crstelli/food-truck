@@ -2,7 +2,7 @@ import "@/app/globals.css";
 import "leaflet/dist/leaflet.css";
 
 import type { Metadata } from "next";
-import { ThemeProvider } from "@/components/custom/ThemeProvider";
+import { ThemeProvider } from "@/components/custom/theme/ThemeProvider";
 
 import { Nunito } from "next/font/google";
 const nunito = Nunito({ subsets: ["latin"] });

@@ -3,7 +3,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 import { Button } from "@/components/ui/button";
-import { H1, H2 } from "@/components/custom/typography";
+import { H1, H2 } from "@/components/ui/typography";
 
 export const metadata: Metadata = {
   title: "Home",

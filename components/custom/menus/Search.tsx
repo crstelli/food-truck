@@ -2,9 +2,9 @@ import { useState } from "react";
 import { useSidebarContext } from "@/app/app/(sidebar)/useSidebarContext";
 
 import { Input } from "@/components/ui/input";
-import { H1 } from "@/components/custom/typography";
+import { H1 } from "@/components/ui/typography";
 
-import { PlaceCard } from "@/components/custom/PlaceCard";
+import { PlaceCard } from "@/components/custom/sidebar/PlaceCard";
 
 function Search() {
   const [typing, setTyping] = useState("");

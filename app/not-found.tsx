@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { H1 } from "@/components/custom/typography";
+import { H1 } from "@/components/ui/typography";
 import { Button } from "@/components/ui/button";
 
 export default function NotFound() {

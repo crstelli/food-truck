@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { Navbar } from "@/components/custom/(navbar)/Navbar";
+import { Navbar } from "@/components/custom/navbar/Navbar";
 import Image from "next/image";
-import { H1, P } from "@/components/custom/typography";
+import { H1, P } from "@/components/ui/typography";
 
 export const metadata: Metadata = {
   title: "About",

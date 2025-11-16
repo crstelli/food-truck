@@ -1,4 +1,4 @@
-import { PlaceCard } from "@/components/custom/PlaceCard";
+import { PlaceCard } from "@/components/custom/sidebar/PlaceCard";
 import { useSidebarContext } from "@/app/app/(sidebar)/useSidebarContext";
 
 function Bookmarks() {

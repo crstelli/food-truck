@@ -2,9 +2,9 @@ import { Place } from "@/app/(lib)/(types)/Place";
 import { Button } from "@/components/ui/button";
 
 import { MapPin, Star } from "lucide-react";
-import { useMapContext } from "./MapContext";
+import { useMapContext } from "../MapContext";
 import { PLACE_FOCUS_ZOOM } from "@/app/(lib)/constants";
-import { useSidebarContext } from "../../app/app/(sidebar)/useSidebarContext";
+import { useSidebarContext } from "../../../app/app/(sidebar)/useSidebarContext";
 
 interface Props {
   place: Place;
@@ -33,8 +33,10 @@ function SideCard({ place }: Props) {
         <Button
           className="w-full"
           onClick={() => {
-            mapRef.current.flyTo(place.location, PLACE_FOCUS_ZOOM);
-            closeMenu();
+            if (mapRef.current) {
+              mapRef.current.flyTo(place.location, PLACE_FOCUS_ZOOM);
+              closeMenu();
+            }
           }}
         >
           <MapPin className="w-4 h-4" />

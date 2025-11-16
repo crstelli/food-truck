@@ -4,7 +4,7 @@ import { useSidebarContext } from "@/app/app/(sidebar)/useSidebarContext";
 import { Button } from "@/components/ui/button";
 import { getAffordabilityColor } from "@/app/(lib)/getAffordabilityColor";
 import { Map, StarIcon } from "lucide-react";
-import { H1, H2, H3 } from "@/components/custom/typography";
+import { H1, H2, H3 } from "@/components/ui/typography";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Star } from "@/components/custom/Star";
 import { BookmarkButton } from "@/components/custom/BookmarkButton";

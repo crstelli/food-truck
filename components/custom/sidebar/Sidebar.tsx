@@ -6,14 +6,14 @@ import Image from "next/image";
 import {
   SidebarContext,
   useSidebarContext,
-} from "../../app/app/(sidebar)/useSidebarContext";
-import { Item } from "../../app/app/(sidebar)/Item";
+} from "../../../app/app/(sidebar)/useSidebarContext";
+import { Item } from "../../../app/app/(sidebar)/Item";
 
-import { Search } from "./(menus)/Search";
-import { Bookmarks } from "./(menus)/Bookmarks";
-import { Add } from "./(menus)/Add";
-import { Settings } from "./(menus)/Settings";
-import { Info } from "./(menus)/Info";
+import { Search } from "../menus/Search";
+import { Bookmarks } from "../menus/Bookmarks";
+import { Add } from "../menus/Add";
+import { Settings } from "../menus/Settings";
+import { Info } from "../menus/Info";
 
 import {
   Bookmark,

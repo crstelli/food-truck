@@ -11,7 +11,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { H1, H2, H3 } from "@/components/custom/typography";
+import { H1, H2, H3 } from "@/components/ui/typography";
 
 import { addItem, AddTruckType } from "@/app/(lib)/(actions)/addTruck";
 import { Controller, FieldValues, useForm } from "react-hook-form";

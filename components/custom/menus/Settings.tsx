@@ -1,5 +1,5 @@
-import { ThemeButton } from "@/components/custom/ThemeButton";
-import { H1, P } from "@/components/custom/typography";
+import { ThemeButton } from "@/components/custom/theme/ThemeButton";
+import { H1, P } from "@/components/ui/typography";
 
 function Settings() {
   return (

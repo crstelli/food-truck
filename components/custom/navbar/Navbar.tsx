@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import { TextLogo } from "../TextLogo";
 import { NavItem } from "./NavItem";
-import { ThemeButton } from "../ThemeButton";
+import { ThemeButton } from "../theme/ThemeButton";
 
 function Navbar() {
   return (

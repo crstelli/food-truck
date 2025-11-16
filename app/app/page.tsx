@@ -4,7 +4,7 @@ import type { Review } from "@/app/(lib)/(types)/Review";
 
 import { fetchPlaces, fetchReviews } from "@/app/(services)/apiPlaces";
 
-import { Sidebar } from "@/components/custom/Sidebar";
+import { Sidebar } from "@/components/custom/sidebar/Sidebar";
 import { Map } from "./(map)";
 import { ContextProvider } from "../../components/custom/ContextProvider";
 import { MapProvider } from "../../components/custom/MapContext";
