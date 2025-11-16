@@ -3,7 +3,7 @@ import { useRouter } from "next/navigation";
 import { Marker, useMap } from "react-leaflet";
 
 import type { LeafletMouseEvent } from "leaflet";
-import type { Place as placeType } from "@/lib/(types)/Place";
+import type { Place as placeType } from "@/lib/types/Place";
 
 import { PLACE_FOCUS_ZOOM } from "@/lib/constants";
 import { markerIconLight, markerIconDark } from "@/lib/markerIcon";

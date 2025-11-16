@@ -1,4 +1,4 @@
-import type { Affordability } from "./(types)/Affordability";
+import type { Affordability } from "./types/Affordability";
 
 export function getAffordabilityColor(value: Affordability) {
   if (value === "$") return "text-green-500";

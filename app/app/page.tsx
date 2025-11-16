@@ -1,6 +1,6 @@
-import type { SearchParams } from "@/lib/(types)/SearchParams";
-import type { Place } from "@/lib/(types)/Place";
-import type { Review } from "@/lib/(types)/Review";
+import type { SearchParams } from "@/lib/types/SearchParams";
+import type { Place } from "@/lib/types/Place";
+import type { Review } from "@/lib/types/Review";
 
 import { fetchPlaces, fetchReviews } from "@/services/apiPlaces";
 

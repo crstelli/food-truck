@@ -1,7 +1,7 @@
 import { Bookmark as BookmarkIcon, BookmarkX } from "lucide-react";
 import { Button } from "../ui/button";
 import { useSidebarContext } from "./sidebar/SidebarProvider";
-import type { Bookmark } from "@/lib/(types)/Bookmark";
+import type { Bookmark } from "@/lib/types/Bookmark";
 
 interface Props {
   placeId: number;

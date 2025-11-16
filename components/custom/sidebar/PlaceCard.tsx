@@ -1,4 +1,4 @@
-import { Place } from "@/lib/(types)/Place";
+import { Place } from "@/lib/types/Place";
 import { Button } from "@/components/ui/button";
 
 import { Star } from "@/components/custom/Star";

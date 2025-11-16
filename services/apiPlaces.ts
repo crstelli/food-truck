@@ -1,4 +1,4 @@
-import { AddTruckType } from "../lib/(actions)/addTruck";
+import { AddTruckType } from "../lib/actions/addTruck";
 import { supabase } from "./supabase";
 
 export async function fetchPlaces() {

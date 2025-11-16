@@ -1,6 +1,6 @@
 "use server";
 
-import type { Affordability } from "../(types)/Affordability";
+import type { Affordability } from "../types/Affordability";
 import type { LatLngTuple } from "leaflet";
 import { addPlace } from "@/services/apiPlaces";
 import { revalidatePath } from "next/cache";

@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/select";
 import { H1, H2, H3 } from "@/components/ui/typography";
 
-import { addItem, AddTruckType } from "@/lib/(actions)/addTruck";
+import { addItem, AddTruckType } from "@/lib/actions/addTruck";
 import { Controller, FieldValues, useForm } from "react-hook-form";
 
 function Add() {

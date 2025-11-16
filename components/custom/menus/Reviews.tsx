@@ -1,7 +1,7 @@
 import { H2 } from "@/components/ui/typography";
 import { Star } from "../Star";
 import { StarIcon } from "lucide-react";
-import type { Place } from "@/lib/(types)/Place";
+import type { Place } from "@/lib/types/Place";
 
 interface Props {
   place: Place;
