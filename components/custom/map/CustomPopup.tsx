@@ -40,7 +40,7 @@ function CustomPopup({ onClose, place }: Props) {
         <CardContent className="flex justify-between">
           <span className="flex items-center gap-1 text-lg">
             <Star />
-            <span className="font-bold">{place.rating_value}</span> (
+            <span className="font-bold">{place.rating_value.toFixed(1)}</span> (
             {place.reviews.length})
           </span>
           <h3
