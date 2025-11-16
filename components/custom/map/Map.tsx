@@ -23,7 +23,7 @@ export default function Map() {
       doubleClickZoom
     >
       {resolvedTheme === "dark" ? (
-        <TileLayer url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png" />
+        <TileLayer url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png" />
       ) : (
         <TileLayer url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png" />
       )}
