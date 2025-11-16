@@ -47,7 +47,7 @@ function Info() {
             <h2 className="font-bold">Rating</h2>
             <span className="flex items-center gap-2 text-lg">
               <Star />
-              {place.rating_value}
+              {place.rating_value.toFixed(1)}
             </span>
           </div>
           <div>
