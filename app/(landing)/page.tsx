@@ -21,7 +21,7 @@ export default function page() {
         <H2 className="text-2xl font-light text-center md:text-left text-muted-foreground">
           Over 100.000 food trucks around the world.
         </H2>
-        <Link href="/app" className="mx-auto md:mx-0 mt-8 md:mt-2">
+        <Link href="/app" className="mx-auto md:mx-0 mt-8 md:mt-4">
           <Button className="font-bold text-lg">Check the App</Button>
         </Link>
       </div>
@@ -30,6 +30,7 @@ export default function page() {
         <Image
           src="landing-illustration.svg"
           alt="Food truck illustration"
+          sizes="400px"
           fill
         />
       </div>
