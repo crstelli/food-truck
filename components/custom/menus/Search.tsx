@@ -21,7 +21,7 @@ function Search() {
         className="mt-6 w-[80%] mx-auto"
       />
 
-      <div className="flex flex-col mt-10">
+      <div className="flex flex-col gap-4 mt-10">
         {typing.length > 2 &&
           places
             .filter((place) =>
