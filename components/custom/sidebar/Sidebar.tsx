@@ -35,7 +35,12 @@ function Sidebar() {
           href="/"
           className={`relative mx-auto size-8 ${menu && "md:size-15"}`}
         >
-          <Image src={"/logo.svg"} alt="Logo of the App" fill />
+          <Image
+            onClick={(e) => e.stopPropagation()} // Avoiding Map redirect.
+            src={"/logo.svg"}
+            alt="Logo of the App"
+            fill
+          />
         </Link>
         <ul
           className={`flex flex-col gap-8 ${
