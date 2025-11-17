@@ -28,10 +28,20 @@ export default function page() {
           di click.
         </P>
         <div className="relative aspect-video max-lg:mt-10 justify-self-end w-[90%] max-w-[500px] overflow-hidden rounded-md border shadow-2xl">
-          <Image src="/about-image.jpg" alt="Image of a foodtruck" fill />
+          <Image
+            src="/about-image.jpg"
+            sizes="(max-width: 400px) 250px, 500px"
+            alt="Image of a foodtruck"
+            fill
+          />
         </div>
         <div className="relative mt-10 aspect-video w-[90%] max-w-[500px] overflow-hidden rounded-md border shadow-2xl">
-          <Image src="/about-image-2.jpg" alt="Image of a foodtruck" fill />
+          <Image
+            src="/about-image-2.jpg"
+            sizes="(max-width: 400px) 250px, 500px"
+            alt="Image of a foodtruck"
+            fill
+          />
         </div>
         <P className="text-lg max-lg:mt-10 lg:text-right">
           Con FoodTruck non solo trovi i camioncini più vicini, ma puoi anche
