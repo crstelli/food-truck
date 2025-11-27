@@ -99,7 +99,7 @@ NEXT_PUBLIC_SUPABASE_KEY = Your Supabase Key
 
 ## Author
 
-Giuseppe - [LinkedIn](https://linkedin.com/in/crescitelli) - [Portfolio](https://crescitelli.dev)
+Giuseppe - [LinkedIn](https://linkedin.com/in/giuseppecrescitelli) - [Portfolio](https://crescitelli.dev)
 
 ## License
 
